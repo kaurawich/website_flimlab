@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FilmLab | รับติดฟิล์มอาคาร บ้าน คอนโด ครบทุกแบรนด์</title>
+  <meta name="description" content="รับติดฟิล์มกันร้อน ฟิล์มอาคาร บ้าน คอนโด สำนักงาน ครบทุกแบรนด์ชั้นนำในไทย 3M, LLumar, V-KOOL, XPEL และอื่น ๆ สำรวจหน้างานฟรี ประเมินราคาฟรีทาง LINE">
+  <meta name="theme-color" content="#0a6e86">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FilmLab | รับติดฟิล์มอาคาร ครบทุกแบรนด์">
+  <meta property="og:description" content="บ้านเย็นขึ้น ค่าไฟลดลง ด้วยฟิล์มที่ใช่ สำรวจหน้างานฟรี ประเมินราคาฟรีทาง LINE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a6e86'/%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='white' stroke-width='2.2'/%3E%3Cpath d='M11 21 21 11' stroke='%235cc6d6' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Prompt:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "FilmLab",
+    "description": "รับติดฟิล์มอาคาร บ้าน คอนโด สำนักงาน ครบทุกแบรนด์ชั้นนำในไทย",
+    "telephone": "080-000-0000",
+    "areaServed": "กรุงเทพมหานครและปริมณฑล",
+    "openingHours": "Mo-Su 08:00-20:00"
+  }
+  </script>
+</head>
+
+<!-- ตั้งค่า LINE ID ของบริษัทที่ data-line-id (ใช้กับปุ่ม "ถามราคา" และฟอร์ม) -->
+<body data-line-id="@filmlab">
+
+  <!-- ไอคอนและภาพวิวหน้าต่าง (ใช้ซ้ำทั้งหน้า) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#6fc0e8"/>
+        <stop offset=".6" stop-color="#c7e8f4"/>
+        <stop offset="1" stop-color="#fdf0d5"/>
+      </linearGradient>
+      <radialGradient id="g-sun">
+        <stop offset="0" stop-color="#fffbe8"/>
+        <stop offset=".35" stop-color="#ffeeb0" stop-opacity=".8"/>
+        <stop offset="1" stop-color="#ffeeb0" stop-opacity="0"/>
+      </radialGradient>
+      <pattern id="p-win" width="9" height="11" patternUnits="userSpaceOnUse">
+        <rect x="2" y="2" width="4" height="5" fill="#dcedf4" opacity=".6"/>
+      </pattern>
+      <g id="near">
+        <rect x="-4" y="222" width="66" height="98"/>
+        <rect x="66" y="204" width="46" height="116"/>
+        <rect x="118" y="236" width="58" height="84"/>
+        <rect x="182" y="210" width="40" height="110"/>
+        <rect x="228" y="230" width="68" height="90"/>
+        <rect x="302" y="214" width="48" height="106"/>
+        <rect x="356" y="238" width="48" height="82"/>
+      </g>
+    </defs>
+
+    <symbol id="scene" viewBox="0 0 400 320">
+      <rect width="400" height="320" fill="url(#g-sky)"/>
+      <circle cx="112" cy="80" r="96" fill="url(#g-sun)"/>
+      <circle cx="112" cy="80" r="26" fill="#fffdf2"/>
+      <g fill="#fff" opacity=".85">
+        <ellipse cx="292" cy="66" rx="40" ry="10"/>
+        <ellipse cx="316" cy="57" rx="24" ry="12"/>
+        <ellipse cx="228" cy="112" rx="32" ry="7"/>
+      </g>
+      <g fill="#a7c3d3">
+        <rect x="0" y="178" width="38" height="142"/>
+        <rect x="42" y="150" width="30" height="170"/>
+        <rect x="76" y="192" width="44" height="128"/>
+        <rect x="124" y="136" width="26" height="184"/>
+        <rect x="135" y="118" width="3" height="18"/>
+        <rect x="154" y="172" width="50" height="148"/>
+        <rect x="208" y="156" width="34" height="164"/>
+        <rect x="246" y="196" width="40" height="124"/>
+        <rect x="290" y="146" width="30" height="174"/>
+        <rect x="324" y="176" width="40" height="144"/>
+        <rect x="368" y="160" width="32" height="160"/>
+      </g>
+      <use href="#near" fill="#6a8fa4"/>
+      <use href="#near" fill="url(#p-win)"/>
+      <g fill="#4d8768">
+        <circle cx="14" cy="300" r="16"/><circle cx="40" cy="305" r="14"/>
+        <circle cx="96" cy="298" r="18"/><circle cx="150" cy="305" r="15"/>
+        <circle cx="200" cy="300" r="17"/><circle cx="262" cy="304" r="16"/>
+        <circle cx="318" cy="299" r="18"/><circle cx="372" cy="303" r="16"/>
+      </g>
+      <rect y="308" width="400" height="12" fill="#3f6f59"/>
+    </symbol>
+
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-drag" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
+    <symbol id="i-line" viewBox="0 0 24 24"><path d="M12 2.5C6.2 2.5 1.5 6.3 1.5 11c0 4.2 3.7 7.7 8.8 8.4.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.6 8.2-6.1 1.5-1.7 2.3-3.4 2.3-5.3 0-4.7-4.7-8.5-10.5-8.5z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="FilmLab หน้าแรก">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#0a6e86"/>
+          <rect x="8" y="8" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/>
+          <path d="M11 21 21 11" stroke="#5cc6d6" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text"><strong>Film<span>Lab</span></strong><small>รับติดฟิล์มอาคาร</small></span>
+      </a>
+
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a href="#finder">เลือกฟิล์ม</a>
+        <a href="#brands">แบรนด์</a>
+        <a href="#works">ผลงาน</a>
+        <a href="#process">ขั้นตอน</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="header-phone" href="tel:0800000000"><svg class="i"><use href="#i-phone"/></svg>080-000-0000</a>
+        <a class="btn btn-line btn-sm" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">
+          <svg class="i i-fill"><use href="#i-line"/></svg>ปรึกษาฟรี
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">รับติดฟิล์มอาคาร · บ้าน · คอนโด · สำนักงาน</p>
+          <h1>บ้านเย็นขึ้น<br>ค่าไฟลดลง<br><span class="grad">ด้วยฟิล์มที่ใช่</span></h1>
+          <p class="lead">รวมฟิล์มทุกแบรนด์ชั้นนำในไทยไว้ในที่เดียว เราช่วยเทียบให้ตรงงบ ตรงปัญหา พร้อมทีมช่างติดตั้งมืออาชีพ</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">
+              <svg class="i i-fill"><use href="#i-line"/></svg>ปรึกษาฟรีทาง LINE
+            </a>
+            <a class="btn btn-ghost btn-lg" href="tel:0800000000">
+              <svg class="i"><use href="#i-phone"/></svg>โทร 080-000-0000
+            </a>
+          </div>
+
+          <ul class="checks">
+            <li><svg class="i"><use href="#i-check"/></svg>สำรวจหน้างานฟรี</li>
+            <li><svg class="i"><use href="#i-check"/></svg>มีตัวอย่างฟิล์มให้เทียบจริง</li>
+            <li><svg class="i"><use href="#i-check"/></svg>รับประกันงานติดตั้ง</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="ba">
+            <div class="ba-layer ba-before">
+              <svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg>
+              <div class="glare"></div>
+              <span class="ba-badge"><svg class="i"><use href="#i-thermo"/></svg>38°C</span>
+              <span class="ba-label">ไม่ติดฟิล์ม</span>
+            </div>
+            <div class="ba-layer ba-after">
+              <svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg>
+              <div class="tint"></div>
+              <span class="ba-badge"><svg class="i"><use href="#i-thermo"/></svg>27°C</span>
+              <span class="ba-label">ติดฟิล์มกันร้อน</span>
+            </div>
+            <div class="ba-frame"></div>
+            <div class="ba-handle"><span class="ba-knob"><svg class="i"><use href="#i-drag"/></svg></span></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="เลื่อนเพื่อเปรียบเทียบก่อนและหลังติดฟิล์ม">
+          </div>
+          <p class="ba-caption">ลากเพื่อเปรียบเทียบ · ภาพจำลองประกอบเท่านั้น</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="stats">
+          <li><strong>99%</strong><span>กันรังสี UV</span></li>
+          <li><strong>60%+</strong><span>ลดความร้อนผ่านกระจก*</span></li>
+          <li><strong>10+</strong><span>แบรนด์ชั้นนำให้เลือกเทียบ</span></li>
+          <li><strong>ฟรี</strong><span>สำรวจและประเมินราคา</span></li>
+        </ul>
+        <p class="footnote">*ขึ้นอยู่กับรุ่นฟิล์มและสภาพกระจก</p>
+      </div>
+    </section>
+
+    <!-- ===== Film finder ===== -->
+    <section class="section" id="finder">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">เลือกฟิล์มให้ตรงปัญหา</p>
+          <h2>ปัญหาแบบไหน ฟิล์มแบบนั้น</h2>
+          <p>เลือกสิ่งที่คุณกังวลที่สุด แล้วดูว่าฟิล์มแบบไหนเหมาะกับบ้านคุณ</p>
+        </div>
+
+        <div class="finder">
+          <div class="finder-tabs" role="tablist" aria-label="ปัญหาที่พบ">
+            <button class="finder-tab" role="tab" id="tab-heat" aria-controls="panel-heat" aria-selected="true">
+              <span class="tab-icon"><svg class="i"><use href="#i-sun"/></svg></span>
+              <span><strong>บ้านร้อน แดดส่องทั้งวัน</strong><small>ฟิล์มกันร้อน</small></span>
+            </button>
+            <button class="finder-tab" role="tab" id="tab-privacy" aria-controls="panel-privacy" aria-selected="false" tabindex="-1">
+              <span class="tab-icon"><svg class="i"><use href="#i-eye"/></svg></span>
+              <span><strong>ไม่อยากให้คนข้างนอกมองเห็น</strong><small>ฟิล์มปรอท</small></span>
+            </button>
+            <button class="finder-tab" role="tab" id="tab-safety" aria-controls="panel-safety" aria-selected="false" tabindex="-1">
+              <span class="tab-icon"><svg class="i"><use href="#i-shield"/></svg></span>
+              <span><strong>กลัวกระจกแตก อยากกันขโมย</strong><small>ฟิล์มนิรภัย</small></span>
+            </button>
+            <button class="finder-tab" role="tab" id="tab-decor" aria-controls="panel-decor" aria-selected="false" tabindex="-1">
+              <span class="tab-icon"><svg class="i"><use href="#i-sparkle"/></svg></span>
+              <span><strong>อยากกั้นห้อง หรือแต่งกระจก</strong><small>ฟิล์มฝ้า / ตกแต่ง</small></span>
+            </button>
+          </div>
+
+          <div class="finder-panels">
+            <div class="finder-panel" role="tabpanel" id="panel-heat" aria-labelledby="tab-heat">
+              <div class="swatch swatch-heat"><span>ใส มองวิวชัด</span></div>
+              <div class="panel-body">
+                <span class="pill">แนะนำ</span>
+                <h3>ฟิล์มกันร้อนเซรามิก / นาโน</h3>
+                <p>ลดความร้อนได้มากโดยไม่ต้องใช้ฟิล์มสีเข้ม มองวิวได้ชัดเหมือนเดิม ห้องไม่มืด และช่วยให้แอร์ทำงานเบาลง</p>
+                <h4>เหมาะกับ</h4>
+                <ul class="ticks">
+                  <li>ห้องที่หันทิศตะวันตก ห้องนอน ห้องนั่งเล่น</li>
+                  <li>คอนโดที่มีกระจกบานใหญ่</li>
+                  <li>คนที่อยากได้ความเย็น แต่ไม่อยากให้บ้านมืด</li>
+                </ul>
+                <a class="btn btn-primary" href="#contact" data-line-msg="สวัสดี สนใจฟิล์มกันร้อนเซรามิก/นาโน ขอคำแนะนำและราคาหน่อย">ถามราคาฟิล์มกันร้อน<svg class="i"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+
+            <div class="finder-panel" role="tabpanel" id="panel-privacy" aria-labelledby="tab-privacy" hidden>
+              <div class="swatch swatch-privacy"><span>ข้างนอกเห็นเป็นเงา</span></div>
+              <div class="panel-body">
+                <span class="pill">แนะนำ</span>
+                <h3>ฟิล์มปรอท / ฟิล์มสะท้อนแสง</h3>
+                <p>ตอนกลางวันคนข้างนอกจะเห็นเป็นกระจกเงา แต่ข้างในยังมองออกไปได้ปกติ ได้ทั้งความเป็นส่วนตัวและกันร้อนไปพร้อมกัน</p>
+                <h4>เหมาะกับ</h4>
+                <ul class="ticks">
+                  <li>บ้านติดถนน หรือหน้าต่างที่หันเข้าหาเพื่อนบ้าน</li>
+                  <li>ห้องนอน ห้องน้ำ</li>
+                  <li>ออฟฟิศชั้นล่าง</li>
+                </ul>
+                <p class="note">ข้อควรรู้: ตอนกลางคืนที่เปิดไฟในบ้าน คนข้างนอกจะมองเข้ามาเห็นได้ ควรใช้คู่กับม่าน</p>
+                <a class="btn btn-primary" href="#contact" data-line-msg="สวัสดี สนใจฟิล์มปรอท/ฟิล์มสะท้อนแสง ขอคำแนะนำและราคาหน่อย">ถามราคาฟิล์มปรอท<svg class="i"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+
+            <div class="finder-panel" role="tabpanel" id="panel-safety" aria-labelledby="tab-safety" hidden>
+              <div class="swatch swatch-safety"><span>กระจกแตกไม่กระจาย</span></div>
+              <div class="panel-body">
+                <span class="pill">แนะนำ</span>
+                <h3>ฟิล์มนิรภัย (Safety Film)</h3>
+                <p>เนื้อฟิล์มหนาพิเศษ ช่วยยึดเศษกระจกไว้เมื่อกระจกแตก ลดอันตรายจากเศษคม และทำให้ทุบกระจกเข้ามาได้ยากขึ้น</p>
+                <h4>เหมาะกับ</h4>
+                <ul class="ticks">
+                  <li>บ้านที่มีเด็กเล็กหรือผู้สูงอายุ</li>
+                  <li>ประตูกระจก ราวกันตก กระจกบานใหญ่</li>
+                  <li>ร้านค้า โชว์รูม</li>
+                </ul>
+                <a class="btn btn-primary" href="#contact" data-line-msg="สวัสดี สนใจฟิล์มนิรภัย ขอคำแนะนำและราคาหน่อย">ถามราคาฟิล์มนิรภัย<svg class="i"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+
+            <div class="finder-panel" role="tabpanel" id="panel-decor" aria-labelledby="tab-decor" hidden>
+              <div class="swatch swatch-decor"><span>ฝ้า / ลวดลาย</span></div>
+              <div class="panel-body">
+                <span class="pill">แนะนำ</span>
+                <h3>ฟิล์มฝ้า / ฟิล์มตกแต่ง</h3>
+                <p>เปลี่ยนกระจกใสให้เป็นฝ้าหรือมีลวดลาย ได้ความเป็นส่วนตัวโดยแสงยังผ่านได้ ทำแถบคาดกระจกหรือโลโก้บริษัทก็ได้</p>
+                <h4>เหมาะกับ</h4>
+                <ul class="ticks">
+                  <li>ห้องประชุม ห้องน้ำ</li>
+                  <li>ประตูและผนังกระจกในสำนักงาน</li>
+                  <li>หน้าร้านที่อยากใส่โลโก้</li>
+                </ul>
+                <a class="btn btn-primary" href="#contact" data-line-msg="สวัสดี สนใจฟิล์มฝ้า/ฟิล์มตกแต่ง ขอคำแนะนำและราคาหน่อย">ถามราคาฟิล์มฝ้า<svg class="i"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Brands ===== -->
+    <section class="section section-alt" id="brands">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">ครบทุกแบรนด์</p>
+          <h2>ฟิล์มแบรนด์ชั้นนำในไทย<br>รวมไว้ที่นี่ที่เดียว</h2>
+          <p>เราไม่ผูกกับแบรนด์ไหน จึงแนะนำได้ตรงไปตรงมา ตรงงบ และตรงกับการใช้งานจริง</p>
+        </div>
+
+        <!-- แก้ไข/เพิ่มแบรนด์ได้ที่รายการนี้ (โลโก้อยู่ใน assets/img/brands, ปรับขนาดด้วย --h) -->
+        <ul class="brand-grid">
+          <li class="brand"><img src="assets/img/brands/3m.svg" alt="3M" style="--h: 38px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/llumar.png" alt="LLumar" style="--h: 28px" loading="lazy"></li>
+          <li class="brand"><img class="logo-dark" src="assets/img/brands/v-kool.png" alt="V-KOOL" style="--h: 32px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/xpel.svg" alt="XPEL" style="--h: 28px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/hi-kool.png" alt="Hi-Kool" style="--h: 38px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/lamina.png" alt="Lamina" style="--h: 46px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/solargard.svg" alt="SolarGard" style="--h: 56px" loading="lazy"></li>
+          <li class="brand"><img class="logo-dark" src="assets/img/brands/huper-optik.png" alt="Hüper Optik" style="--h: 28px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/suntek.svg" alt="SunTek" style="--h: 30px" loading="lazy"></li>
+          <li class="brand"><img src="assets/img/brands/madico.svg" alt="Madico" style="--h: 32px" loading="lazy"></li>
+          <li class="brand brand-more"><svg class="i"><use href="#i-plus"/></svg>แบรนด์อื่น ๆ ถามได้</li>
+        </ul>
+
+        <div class="brand-note">
+          <p><strong>ไม่แน่ใจว่าแบรนด์ไหนคุ้ม?</strong> ส่งรูปหน้าต่างมา เราจะเทียบ 2–3 ตัวเลือกตามงบให้ดูก่อนตัดสินใจ</p>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill"><use href="#i-line"/></svg>ส่งรูปทาง LINE</a>
+        </div>
+        <p class="fineprint">ชื่อแบรนด์และเครื่องหมายการค้าเป็นของเจ้าของแต่ละราย</p>
+      </div>
+    </section>
+
+    <!-- ===== Works ===== -->
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">ผลงานของเรา</p>
+          <h2>งานติดฟิล์มที่ผ่านมา</h2>
+          <p>บ้าน คอนโด สำนักงาน และร้านค้า ติดตั้งโดยทีมช่างของเรา</p>
+        </div>
+
+        <!--
+          เปลี่ยนเป็นรูปผลงานจริง: วางรูปไว้ที่ assets/img/works/ แล้วในแต่ละการ์ด
+          แทนที่ <div class="work-art ...">...</div> ด้วย <img src="assets/img/works/ชื่อไฟล์.jpg" alt="คำอธิบายรูป" loading="lazy">
+          และลบ <span class="work-sample">ภาพตัวอย่าง</span> ออก
+        -->
+        <div class="works">
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-heat"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">บ้าน</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>ห้องนั่งเล่นทิศตะวันตก</h3>
+              <p>ฟิล์มกันร้อนเซรามิก</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-nano panes-3"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">คอนโด</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>กระจกบานใหญ่ ห้องรับแขก</h3>
+              <p>ฟิล์มกันร้อนนาโน</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-mirror panes-3"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">สำนักงาน</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>กระจกด้านหน้าอาคาร</h3>
+              <p>ฟิล์มปรอทสะท้อนแสง</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-frost"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">สำนักงาน</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>ผนังกระจกห้องประชุม</h3>
+              <p>ฟิล์มฝ้าแถบคาด</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-safety"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">ร้านค้า</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>ประตูกระจกหน้าร้าน</h3>
+              <p>ฟิล์มนิรภัย</p>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-media">
+              <div class="work-art art-dark"><svg class="scene" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene"/></svg></div>
+              <span class="work-tag">บ้าน</span>
+              <span class="work-sample">ภาพตัวอย่าง</span>
+            </div>
+            <div class="work-body">
+              <h3>ห้องนอนชั้นสอง</h3>
+              <p>ฟิล์มกันร้อนสีเข้ม</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="works-cta">
+          <p>อยากดูงานจริงเพิ่ม หรืองานในย่านใกล้บ้านคุณ?</p>
+          <a class="btn btn-ghost" href="#contact" data-line-msg="สวัสดี ขอดูรูปผลงานติดฟิล์มเพิ่มเติมหน่อย"><svg class="i i-fill line-green"><use href="#i-line"/></svg>ขอดูรูปผลงานทาง LINE</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">ขั้นตอนการทำงาน</p>
+          <h2>ง่าย ๆ แค่ 4 ขั้นตอน</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>ทัก LINE หรือโทรหาเรา</h3>
+            <p>ส่งรูปหน้าต่างและบอกปัญหาที่เจอ ประเมินราคาคร่าว ๆ ให้ก่อนได้เลย</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>สำรวจหน้างานฟรี</h3>
+            <p>ช่างไปวัดพื้นที่จริง พร้อมตัวอย่างฟิล์มหลายแบรนด์ให้ทาบเทียบกับกระจก</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>ใบเสนอราคาชัดเจน</h3>
+            <p>แจกแจงรุ่นฟิล์ม ราคา และเงื่อนไขรับประกัน ไม่มีค่าใช้จ่ายแอบแฝง</p>
+          </li>
+          <li class="step">
+            <span class="step-num">4</span>
+            <h3>ติดตั้งและรับประกัน</h3>
+            <p>ติดตั้งเรียบร้อย เก็บงานสะอาด พร้อมใบรับประกันตามเงื่อนไขของแต่ละแบรนด์</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-head">
+          <p class="kicker">คำถามที่พบบ่อย</p>
+          <h2>สงสัยตรงไหน<br>ถามได้เลย</h2>
+          <p>ไม่เจอคำตอบที่ต้องการ? ทักมาคุยกับทีมงานได้ทาง LINE</p>
+          <a class="btn btn-ghost" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill line-green"><use href="#i-line"/></svg>ถามทีมงาน</a>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>ติดฟิล์มแล้วห้องจะมืดไหม?<span class="plus"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <p>ไม่จำเป็นต้องมืด ฟิล์มกันร้อนรุ่นใหม่อย่างเซรามิกหรือนาโนกันร้อนได้ดีแม้เป็นฟิล์มใส เลือกความเข้มได้ตามต้องการ และเราจะนำตัวอย่างไปทาบกับกระจกจริงให้ดูก่อนตัดสินใจ</p>
+          </details>
+          <details>
+            <summary>ราคาคิดอย่างไร?<span class="plus"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <p>คิดตามพื้นที่กระจกและรุ่นฟิล์มที่เลือก ส่งรูปหรือขนาดหน้าต่างคร่าว ๆ มาทาง LINE เพื่อประเมินราคาเบื้องต้นได้ฟรี ไม่มีข้อผูกมัด</p>
+          </details>
+          <details>
+            <summary>ใช้เวลาติดตั้งนานแค่ไหน?<span class="plus"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <p>บ้านหรือคอนโดทั่วไปส่วนใหญ่เสร็จภายใน 1 วัน ส่วนงานอาคารขนาดใหญ่จะแจ้งระยะเวลาไว้ในใบเสนอราคา</p>
+          </details>
+          <details>
+            <summary>มีรับประกันไหม?<span class="plus"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <p>มีทั้งรับประกันเนื้อฟิล์มจากแบรนด์ และรับประกันงานติดตั้งจากเรา ระยะเวลาขึ้นอยู่กับรุ่นและแบรนด์ ซึ่งจะระบุไว้ชัดเจนในใบเสนอราคา</p>
+          </details>
+          <details>
+            <summary>ฟิล์มเก่าลอก เป็นฟอง ลอกออกให้ได้ไหม?<span class="plus"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <p>ได้ เรามีบริการลอกฟิล์มเก่า ทำความสะอาดคราบกาว และเตรียมผิวกระจกก่อนติดฟิล์มใหม่</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="kicker light">ประเมินราคาฟรี</p>
+          <h2>ส่งรูปหน้าต่างมา<br>เราช่วยเลือกฟิล์มให้</h2>
+          <p>บอกขนาดกระจกคร่าว ๆ หรือส่งรูปมาทาง LINE ทีมงานจะแนะนำฟิล์มที่เหมาะ และแจ้งราคาเบื้องต้นให้ฟรี ไม่มีข้อผูกมัด</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill"><use href="#i-line"/></svg>LINE: @filmlab</a>
+            <a class="btn btn-outline-light btn-lg" href="tel:0800000000"><svg class="i"><use href="#i-phone"/></svg>080-000-0000</a>
+          </div>
+
+          <ul class="contact-info">
+            <li><svg class="i"><use href="#i-clock"/></svg>เปิดทุกวัน 08:00–20:00 น.</li>
+            <li><svg class="i"><use href="#i-pin"/></svg>ให้บริการกรุงเทพฯ และปริมณฑล</li>
+          </ul>
+        </div>
+
+        <form class="quote-form" id="quote-form" novalidate>
+          <h3>ขอใบเสนอราคา</h3>
+          <p class="sub">กรอกสั้น ๆ แล้วส่งเข้า LINE ได้ทันที</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">ชื่อ</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="ชื่อของคุณ" required>
+              <span class="err">กรุณากรอกชื่อ</span>
+            </div>
+            <div class="field">
+              <label for="f-phone">เบอร์โทร</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08x-xxx-xxxx" required>
+              <span class="err">กรุณากรอกเบอร์โทรให้ถูกต้อง</span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-place">สถานที่</label>
+              <select id="f-place" name="place">
+                <option>บ้าน / ทาวน์โฮม</option>
+                <option>คอนโด</option>
+                <option>สำนักงาน / อาคาร</option>
+                <option>ร้านค้า / โชว์รูม</option>
+                <option>อื่น ๆ</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-film">ฟิล์มที่สนใจ</label>
+              <select id="f-film" name="film">
+                <option>ยังไม่แน่ใจ ช่วยแนะนำ</option>
+                <option>ฟิล์มกันร้อน</option>
+                <option>ฟิล์มปรอท / ความเป็นส่วนตัว</option>
+                <option>ฟิล์มนิรภัย</option>
+                <option>ฟิล์มฝ้า / ตกแต่ง</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-detail">รายละเอียดเพิ่มเติม <span class="optional">(ไม่บังคับ)</span></label>
+            <textarea id="f-detail" name="detail" rows="3" placeholder="เช่น หน้าต่าง 4 บาน ขนาดประมาณ 1.2 x 2 ม. ห้องหันทิศตะวันตก"></textarea>
+          </div>
+
+          <button class="btn btn-line btn-lg btn-block" type="submit"><svg class="i i-fill"><use href="#i-line"/></svg>ส่งข้อมูลทาง LINE</button>
+          <p class="form-note">ระบบจะเปิดแชต LINE พร้อมข้อความที่กรอกไว้ แนบรูปหน้าต่างเพิ่มในแชตได้เลย</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <a class="btn btn-ghost btn-block form-open" id="f-open" target="_blank" rel="noopener" hidden>เปิด LINE เพื่อส่งข้อความ</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="logo" aria-label="FilmLab กลับขึ้นด้านบน">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#0a6e86"/>
+          <rect x="8" y="8" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/>
+          <path d="M11 21 21 11" stroke="#5cc6d6" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text"><strong>Film<span>Lab</span></strong><small>รับติดฟิล์มอาคาร บ้าน คอนโด สำนักงาน</small></span>
+      </a>
+      <p>© <span id="year">2026</span> FilmLab · กรุงเทพมหานคร</p>
+    </div>
+  </footer>
+
+  <!-- แถบติดต่อด้านล่าง (มือถือ) -->
+  <div class="mobile-bar">
+    <a class="btn btn-ghost" href="tel:0800000000"><svg class="i"><use href="#i-phone"/></svg>โทรเลย</a>
+    <a class="btn btn-line" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill"><use href="#i-line"/></svg>LINE ปรึกษาฟรี</a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
