@@ -28,3 +28,5 @@ assets/img/works/     รูปผลงาน
 ```
 
 ชื่อแบรนด์และโลโก้เป็นเครื่องหมายการค้าของเจ้าของแต่ละราย
+
+ภาพวิวกรุงเทพฯ ในสไลเดอร์ (`assets/img/hero/`): [Markus Winkler / Pexels](https://www.pexels.com/photo/skyline-of-bangkok-thailand-20020757/) ใช้ภายใต้ Pexels License (ใช้เชิงพาณิชย์ได้ฟรี)
