@@ -2,9 +2,39 @@
   const LINE_ID = document.body.dataset.lineId || '@filmlab';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // เปิดแชต LINE OA พร้อมข้อความที่พิมพ์ไว้ให้
-  const lineChatUrl = (text) =>
-    `https://line.me/R/oaMessage/${encodeURIComponent(LINE_ID)}/?${encodeURIComponent(text)}`;
+  /* ---------- LINE links ----------
+     มือถือ: เปิดแอป LINE ทันที
+       - Android ใช้ intent:// (ถ้าไม่มีแอป จะไปหน้าเว็บ LINE แทน)
+       - iPhone เปิดในแท็บเดิม ให้ iOS ส่งต่อเข้าแอป LINE
+     คอมพิวเตอร์: เปิดหน้า LINE ในแท็บใหม่ (แสดง QR ให้สแกน) */
+  const ua = navigator.userAgent;
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isMobile = isAndroid || isIOS;
+
+  const lineId = encodeURIComponent(LINE_ID);
+  const addFriendPath = `ti/p/${lineId}`;
+  // แชตไลน์แอดพร้อมข้อความที่พิมพ์ไว้ให้
+  const chatPath = (text) => `oaMessage/${lineId}/?${encodeURIComponent(text)}`;
+
+  const lineWebUrl = (path) => `https://line.me/R/${path}`;
+  const lineAppUrl = (path) => (isAndroid
+    ? `intent://${path}#Intent;scheme=line;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=jp.naver.line.android;S.browser_fallback_url=${encodeURIComponent(lineWebUrl(path))};end`
+    : lineWebUrl(path));
+
+  const setLineLink = (a, path) => {
+    if (isMobile) {
+      a.href = lineAppUrl(path);
+      a.removeAttribute('target');
+    } else {
+      a.href = lineWebUrl(path);
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+  };
+
+  document.querySelectorAll('a[href^="https://line.me/R/ti/p/"]').forEach((a) => setLineLink(a, addFriendPath));
+  document.querySelectorAll('[data-line-msg]').forEach((a) => setLineLink(a, chatPath(a.dataset.lineMsg)));
 
   /* ---------- Header border on scroll ---------- */
   const header = document.querySelector('.site-header');
@@ -131,13 +161,6 @@
     lb.addEventListener('close', () => img.removeAttribute('src'));
   }
 
-  /* ---------- "ถามราคา" buttons → LINE with message ---------- */
-  document.querySelectorAll('[data-line-msg]').forEach((el) => {
-    el.href = lineChatUrl(el.dataset.lineMsg);
-    el.target = '_blank';
-    el.rel = 'noopener';
-  });
-
   /* ---------- Quote form → LINE ---------- */
   const form = document.getElementById('quote-form');
   if (form) {
@@ -183,10 +206,19 @@
       const detail = data.get('detail').trim();
       if (detail) lines.push(`รายละเอียด: ${detail}`);
 
-      const url = lineChatUrl(lines.join('\n'));
-      openLink.href = url;
-      // ถ้าเบราว์เซอร์บล็อกหน้าต่างใหม่ ให้แสดงปุ่มเปิด LINE แทน
-      const win = window.open(url, '_blank');
+      const path = chatPath(lines.join('\n'));
+      setLineLink(openLink, path);
+
+      if (isMobile) {
+        // มือถือ: เด้งเข้าแอป LINE เลย และเผื่อปุ่มกดเองถ้าแอปไม่เปิด
+        openLink.hidden = false;
+        status.textContent = 'กำลังเปิด LINE… ถ้าแอปไม่เปิด กดปุ่มด้านล่าง';
+        window.location.href = lineAppUrl(path);
+        return;
+      }
+
+      // คอมพิวเตอร์: เปิดแท็บใหม่ ถ้าเบราว์เซอร์บล็อก ให้แสดงปุ่มเปิด LINE แทน
+      const win = window.open(lineWebUrl(path), '_blank');
       openLink.hidden = Boolean(win);
       status.textContent = win
         ? 'เปิด LINE แล้ว กดส่งข้อความในแชตได้เลย'
