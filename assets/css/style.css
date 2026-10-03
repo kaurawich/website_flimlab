@@ -1001,6 +1001,22 @@ details[open] .plus { transform: rotate(45deg); }
 .contact-info li { display: flex; align-items: center; gap: 10px; }
 .contact-info .i { color: var(--ice); }
 
+.line-qr {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 420px;
+  margin-top: 28px;
+  padding: 14px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--radius);
+}
+.line-qr img { flex: none; width: 112px; height: 112px; border-radius: 8px; }
+.line-qr-title { margin-bottom: 2px; font-family: var(--font-head); font-weight: 600; color: #fff; }
+.line-qr p:not(.line-qr-title) { font-size: .9rem; color: #c3d5dd; }
+.line-qr strong { color: #fff; }
+
 .quote-form {
   padding: 32px;
   color: var(--ink);
@@ -1179,6 +1195,7 @@ details[open] .plus { transform: rotate(45deg); }
   .faq-list details p { padding-right: 0; }
 
   .contact { padding: 64px 0; }
+  .line-qr { display: none; }
   .contact-actions .btn { flex: 1 1 auto; }
   .quote-form { padding: 24px 18px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
