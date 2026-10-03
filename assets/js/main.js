@@ -71,6 +71,66 @@
     });
   });
 
+  /* ---------- Works lightbox ---------- */
+  const lb = document.getElementById('lightbox');
+  if (lb && typeof lb.showModal === 'function') {
+    const img = lb.querySelector('.lb-img');
+    const title = lb.querySelector('.lb-title');
+    const count = lb.querySelector('.lb-count');
+    const prev = lb.querySelector('.lb-prev');
+    const next = lb.querySelector('.lb-next');
+    let photos = [];
+    let index = 0;
+    let label = '';
+
+    const show = (i) => {
+      index = (i + photos.length) % photos.length;
+      img.src = photos[index];
+      img.alt = `${label} รูปที่ ${index + 1}`;
+      count.textContent = `${index + 1} / ${photos.length}`;
+      if (photos.length > 1) new Image().src = photos[(index + 1) % photos.length];
+    };
+
+    document.querySelectorAll('.work[data-photos]').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        photos = card.dataset.photos.split(',').map((s) => s.trim()).filter(Boolean);
+        label = card.dataset.title || '';
+        title.textContent = label;
+        const single = photos.length < 2;
+        prev.hidden = single;
+        next.hidden = single;
+        count.hidden = single;
+        show(0);
+        lb.showModal();
+      });
+    });
+
+    prev.addEventListener('click', () => show(index - 1));
+    next.addEventListener('click', () => show(index + 1));
+    lb.querySelector('.lb-close').addEventListener('click', () => lb.close());
+    // กดพื้นที่ว่างรอบรูปเพื่อปิด
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb || e.target.classList.contains('lb-stage')) lb.close();
+    });
+    lb.addEventListener('keydown', (e) => {
+      if (photos.length < 2) return;
+      if (e.key === 'ArrowLeft') show(index - 1);
+      if (e.key === 'ArrowRight') show(index + 1);
+    });
+    // ปัดซ้าย/ขวาบนมือถือ
+    let startX = null;
+    img.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+    img.addEventListener('pointerup', (e) => {
+      if (startX === null || photos.length < 2) return;
+      const dx = e.clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
+    });
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+    lb.addEventListener('close', () => img.removeAttribute('src'));
+  }
+
   /* ---------- "ถามราคา" buttons → LINE with message ---------- */
   document.querySelectorAll('[data-line-msg]').forEach((el) => {
     el.href = lineChatUrl(el.dataset.lineMsg);
