@@ -678,14 +678,6 @@ h2 {
   max-width: 82%;
   object-fit: contain;
 }
-/* แบรนด์ที่ยังไม่มีไฟล์โลโก้ */
-.brand-text {
-  font-family: var(--font-head);
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: .01em;
-  color: var(--ink);
-}
 
 .brand-more {
   grid-column: span 2;
