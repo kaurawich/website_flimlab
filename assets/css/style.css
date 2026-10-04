@@ -680,7 +680,7 @@ h2 {
 }
 
 .brand-more {
-  grid-column: span 2;
+  grid-column: span 3;  /* 9 แบรนด์: เติมแถวสุดท้ายให้เต็ม (4 และ 3 คอลัมน์) */
   font-size: 1rem;
   font-weight: 500;
   color: var(--brand);
@@ -1164,7 +1164,7 @@ details[open] .plus { transform: rotate(45deg); }
   .brand-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .brand { height: 76px; padding: 0 10px; }
   .brand img { height: calc(var(--h, 36px) * .82); }
-  .brand-more { height: 60px; font-size: .95rem; }
+  .brand-more { grid-column: span 1; flex-direction: column; gap: 2px; padding: 0 8px; font-size: .9rem; line-height: 1.35; text-wrap: balance; }
   .brand-note { flex-direction: column; align-items: stretch; padding: 20px; }
 
   /* มือถือ: ปัดดูผลงานแนวนอน */
