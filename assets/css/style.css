@@ -552,7 +552,6 @@ h2 {
   to { opacity: 1; transform: none; }
 }
 
-/* รูปประกอบแต่ละชนิดฟิล์ม (รูปจากงานจริงของบริษัท) */
 .swatch {
   position: relative;
   display: flex;
@@ -560,18 +559,14 @@ h2 {
   min-height: 260px;
   padding: 14px;
   overflow: hidden;
-  background: var(--border);
   border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px rgba(13, 27, 38, .06);
 }
-.swatch img {
+.swatch::before {
+  content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: var(--focus, 50% 50%);
-  transform: scale(var(--zoom, 1));
-  transform-origin: var(--focus, 50% 50%);
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, .45) 45%, transparent 58%);
 }
 .swatch span {
   position: relative;
@@ -582,6 +577,24 @@ h2 {
   border-radius: 8px;
 }
 
+.swatch-heat {
+  background:
+    radial-gradient(circle at 70% 24%, rgba(255, 255, 255, .85) 0 26px, rgba(255, 255, 255, .25) 27px 60px, transparent 61px),
+    linear-gradient(165deg, #d9f1f6 0%, #8fcad8 100%);
+}
+.swatch-privacy {
+  background: linear-gradient(135deg, #eef2f5 0%, #a6b5bf 28%, #f7f9fa 46%, #8f9faa 66%, #dfe6ea 100%);
+}
+.swatch-safety {
+  background-color: #cfe4ea;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='white' stroke-width='1.6' stroke-linejoin='round' opacity='.95'%3E%3Cpath d='M120 110 20 20M120 110 200 55M120 110 185 260M120 110 35 250M120 110 0 145M120 110 135 0M120 110 200 170'/%3E%3Cpath d='M98 92 121 84 143 97 142 124 117 136 97 121Z'/%3E%3Cpath d='M75 70 128 58 168 84 172 140 128 168 72 150 60 110Z' opacity='.7'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+}
+.swatch-decor {
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, .95) 0 20px, rgba(170, 200, 210, .45) 20px 28px),
+    #e7eff2;
+}
 
 .pill {
   display: inline-block;
@@ -1148,7 +1161,6 @@ details[open] .plus { transform: rotate(45deg); }
   .tab-icon .i { width: 19px; height: 19px; }
   .finder-panel { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
   .swatch { min-height: 120px; }
-  .swatch img { transform: none; }  /* มือถือ: รูปแนวนอน ไม่ต้องซูม */
   .panel-body h3 { font-size: 1.3rem; }
   .panel-body .btn { width: 100%; }
 
