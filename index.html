@@ -277,16 +277,95 @@
         <div class="section-head">
           <p class="kicker">ผลงานของเรา</p>
           <h2>งานติดฟิล์มที่ผ่านมา</h2>
-          <p>บ้าน คอนโด และอาคารสำนักงาน ติดตั้งโดยทีมช่างของเรา กดที่การ์ดเพื่อดูรูปทั้งหมด</p>
+          <p>บ้าน คอนโด ร้านค้า และอาคารสำนักงาน ติดตั้งโดยทีมช่างของเรา กดที่การ์ดเพื่อดูรูปทั้งหมด</p>
         </div>
 
         <!--
           เพิ่ม/แก้ผลงาน: วางรูปไว้ที่ assets/img/works/ แล้วคัดลอกการ์ด <a class="work"> หนึ่งใบไปแก้
           - <img src> = รูปปก (ไฟล์ -sm ขนาดเล็ก)
           - data-photos = รูปทั้งหมดของงานนั้น คั่นด้วยเครื่องหมาย ,
+          - การ์ดที่มี class "work-extra" จะซ่อนไว้บนคอม จนกว่าจะกดปุ่ม "ดูผลงานทั้งหมด"
         -->
-        <div class="works">
-          <a class="work" href="assets/img/works/condo-rama3-1.jpg" data-title="คอนโด พระราม 3"
+        <div class="works" id="works-grid">
+          <a class="work" href="assets/img/works/theroom-1.jpg" data-title="คอนโด The Room พระราม 4"
+             data-photos="assets/img/works/theroom-1.jpg, assets/img/works/theroom-2.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/theroom-1-sm.jpg" alt="หน้าต่างคอนโด The Room พระราม 4 หลังติดฟิล์ม มองเห็นวิวเมือง" loading="lazy">
+              <span class="work-tag">คอนโด</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>2 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>คอนโด The Room พระราม 4</h3>
+              <p>ฟิล์ม LiteTec รุ่น CX-15</p>
+            </div>
+          </a>
+
+          <a class="work" href="assets/img/works/bangkokpirom-1.jpg" data-title="หมู่บ้านบางกอกภิรมย์ (ตลิ่งชัน)"
+             data-photos="assets/img/works/bangkokpirom-1.jpg, assets/img/works/bangkokpirom-2.jpg, assets/img/works/bangkokpirom-3.jpg, assets/img/works/bangkokpirom-4.jpg, assets/img/works/bangkokpirom-5.jpg, assets/img/works/bangkokpirom-6.jpg, assets/img/works/bangkokpirom-7.jpg, assets/img/works/bangkokpirom-8.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/bangkokpirom-1-sm.jpg" alt="หน้าต่างบ้านในหมู่บ้านบางกอกภิรมย์ หลังติดฟิล์ม" loading="lazy">
+              <span class="work-tag">บ้าน</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>8 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>หมู่บ้านบางกอกภิรมย์ (ตลิ่งชัน)</h3>
+              <p>ฟิล์ม 3M รุ่น Ceramate (CRM)</p>
+            </div>
+          </a>
+
+          <a class="work" href="assets/img/works/cafe-1.jpg" data-title="ร้านกาแฟ สนามหลวง (ซ.คุรุฑ)"
+             data-photos="assets/img/works/cafe-1.jpg, assets/img/works/cafe-2.jpg, assets/img/works/cafe-3.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/cafe-1-sm.jpg" alt="กระจกร้านกาแฟ สนามหลวง หลังติดฟิล์ม" loading="lazy">
+              <span class="work-tag">ร้านค้า</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>3 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>ร้านกาแฟ สนามหลวง (ซ.คุรุฑ)</h3>
+              <p>ฟิล์ม LiteTec รุ่น CX-65</p>
+            </div>
+          </a>
+
+          <a class="work" href="assets/img/works/sophonwit-1.jpg" data-title="บริษัท โสภณวิชญ์เอ็นจิเนียริ่ง จำกัด"
+             data-photos="assets/img/works/sophonwit-1.jpg, assets/img/works/sophonwit-2.jpg, assets/img/works/sophonwit-3.jpg, assets/img/works/sophonwit-4.jpg, assets/img/works/sophonwit-5.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/sophonwit-1-sm.jpg" alt="กระจกอาคารสำนักงาน หลังติดฟิล์ม มองจากด้านนอก" loading="lazy">
+              <span class="work-tag">สำนักงาน</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>5 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>บริษัท โสภณวิชญ์เอ็นจิเนียริ่ง จำกัด</h3>
+              <p>ฟิล์ม 3M</p>
+            </div>
+          </a>
+
+          <a class="work" href="assets/img/works/centro-1.jpg" data-title="หมู่บ้านเซนโทร อ่อนนุช–สุวรรณภูมิ (กิ่งแก้ว)"
+             data-photos="assets/img/works/centro-1.jpg, assets/img/works/centro-2.jpg, assets/img/works/centro-3.jpg, assets/img/works/centro-4.jpg, assets/img/works/centro-5.jpg, assets/img/works/centro-6.jpg, assets/img/works/centro-7.jpg, assets/img/works/centro-8.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/centro-1-sm.jpg" alt="หน้าต่างวงกลม บ้านในหมู่บ้านเซนโทร หลังติดฟิล์ม" loading="lazy">
+              <span class="work-tag">บ้าน</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>8 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>หมู่บ้านเซนโทร อ่อนนุช–สุวรรณภูมิ (กิ่งแก้ว)</h3>
+              <p>ฟิล์ม LiteTec รุ่น CC20</p>
+            </div>
+          </a>
+
+          <a class="work work-extra" href="assets/img/works/siam-1.jpg" data-title="สยามอาคารชุด ซ.พหลโยธิน 52 แยก 16"
+             data-photos="assets/img/works/siam-1.jpg, assets/img/works/siam-2.jpg">
+            <div class="work-media">
+              <img src="assets/img/works/siam-1-sm.jpg" alt="หน้าต่างห้องชุด สยามอาคารชุด หลังติดฟิล์ม" loading="lazy">
+              <span class="work-tag">คอนโด</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>2 รูป</span>
+            </div>
+            <div class="work-body">
+              <h3>สยามอาคารชุด ซ.พหลโยธิน 52 แยก 16</h3>
+              <p>ฟิล์ม 3M รุ่น CRM15</p>
+            </div>
+          </a>
+
+          <a class="work work-extra" href="assets/img/works/condo-rama3-1.jpg" data-title="คอนโด พระราม 3"
              data-photos="assets/img/works/condo-rama3-1.jpg">
             <div class="work-media">
               <img src="assets/img/works/condo-rama3-1-sm.jpg" alt="หน้าต่างคอนโดพระราม 3 หลังติดฟิล์ม มองเห็นวิวแม่น้ำเจ้าพระยา" loading="lazy">
@@ -299,33 +378,20 @@
             </div>
           </a>
 
-          <a class="work" href="assets/img/works/seagate-1.jpg" data-title="บจก.ซีเกท เทคโนโลยี (เทพารักษ์)"
-             data-photos="assets/img/works/seagate-1.jpg, assets/img/works/seagate-2.jpg, assets/img/works/seagate-3.jpg, assets/img/works/seagate-4.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/seagate-1-sm.jpg" alt="กระจกอาคาร บจก.ซีเกท เทคโนโลยี หลังติดฟิล์ม มองจากด้านนอก" loading="lazy">
-              <span class="work-tag">สำนักงาน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>4 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>บจก.ซีเกท เทคโนโลยี (เทพารักษ์)</h3>
-              <p>กระจกอาคาร ทั้งด้านในและด้านนอก</p>
-            </div>
-          </a>
-
-          <a class="work" href="assets/img/works/sukhon19-1.jpg" data-title="บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19"
-             data-photos="assets/img/works/sukhon19-1.jpg, assets/img/works/sukhon19-2.jpg, assets/img/works/sukhon19-3.jpg">
+          <a class="work work-extra" href="assets/img/works/sukhon19-1.jpg" data-title="บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19"
+             data-photos="assets/img/works/sukhon19-1.jpg, assets/img/works/sukhon19-2.jpg, assets/img/works/sukhon19-3.jpg, assets/img/works/sukhon19-4.jpg">
             <div class="work-media">
               <img src="assets/img/works/sukhon19-1-sm.jpg" alt="ประตูกระจกห้องนอนออกระเบียง บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19" loading="lazy">
               <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>3 รูป</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>4 รูป</span>
             </div>
             <div class="work-body">
               <h3>บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19</h3>
-              <p>ประตูกระจกห้องนอนออกระเบียง</p>
+              <p>ฟิล์ม 3M</p>
             </div>
           </a>
 
-          <a class="work" href="assets/img/works/sridan20-1.jpg" data-title="บ้านเดี่ยว ซ.ศรีด่าน 20"
+          <a class="work work-extra" href="assets/img/works/sridan20-1.jpg" data-title="บ้านเดี่ยว ซ.ศรีด่าน 20"
              data-photos="assets/img/works/sridan20-1.jpg">
             <div class="work-media">
               <img src="assets/img/works/sridan20-1-sm.jpg" alt="กระจกสูงโถงบันได บ้านเดี่ยว ซ.ศรีด่าน 20" loading="lazy">
@@ -338,12 +404,12 @@
             </div>
           </a>
 
-          <a class="work" href="assets/img/works/lamlukka4-1.jpg" data-title="บ้านเดี่ยว ลำลูกกา คลอง 4"
-             data-photos="assets/img/works/lamlukka4-1.jpg, assets/img/works/lamlukka4-2.jpg, assets/img/works/lamlukka4-3.jpg, assets/img/works/lamlukka4-4.jpg, assets/img/works/lamlukka4-5.jpg, assets/img/works/lamlukka4-6.jpg, assets/img/works/lamlukka4-7.jpg, assets/img/works/lamlukka4-8.jpg">
+          <a class="work work-extra" href="assets/img/works/lamlukka4-1.jpg" data-title="บ้านเดี่ยว ลำลูกกา คลอง 4"
+             data-photos="assets/img/works/lamlukka4-1.jpg, assets/img/works/lamlukka4-2.jpg, assets/img/works/lamlukka4-3.jpg, assets/img/works/lamlukka4-4.jpg, assets/img/works/lamlukka4-5.jpg, assets/img/works/lamlukka4-6.jpg, assets/img/works/lamlukka4-7.jpg, assets/img/works/lamlukka4-8.jpg, assets/img/works/lamlukka4-9.jpg, assets/img/works/lamlukka4-10.jpg">
             <div class="work-media">
               <img src="assets/img/works/lamlukka4-1-sm.jpg" alt="หน้าต่างบ้านเดี่ยว ลำลูกกา คลอง 4 หลังติดฟิล์ม" loading="lazy">
               <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>8 รูป</span>
+              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>10 รูป</span>
             </div>
             <div class="work-body">
               <h3>บ้านเดี่ยว ลำลูกกา คลอง 4</h3>
@@ -356,6 +422,10 @@
             <p>ทัก LINE ขอดูรูปงานเพิ่ม หรือส่งรูปหน้าต่างมาประเมินราคาฟรี</p>
             <a class="btn btn-line" href="#contact" data-line-msg="สวัสดี ขอดูรูปผลงานติดฟิล์มเพิ่มเติมหน่อย"><svg class="i i-fill"><use href="#i-line"/></svg>ขอดูรูปผลงานทาง LINE</a>
           </div>
+        </div>
+
+        <div class="works-more" hidden>
+          <button class="btn btn-ghost" type="button" id="works-more" aria-controls="works-grid" aria-expanded="false">ดูผลงานทั้งหมด (10 งาน)</button>
         </div>
       </div>
     </section>

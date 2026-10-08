@@ -101,6 +101,20 @@
     });
   });
 
+  /* ---------- Works: show first 5, expand on demand ---------- */
+  const worksGrid = document.getElementById('works-grid');
+  const worksMore = document.getElementById('works-more');
+  if (worksGrid && worksMore && worksGrid.querySelector('.work-extra')) {
+    worksGrid.classList.add('is-collapsed');
+    worksMore.parentElement.hidden = false;
+    worksMore.addEventListener('click', () => {
+      worksGrid.classList.remove('is-collapsed');
+      worksMore.setAttribute('aria-expanded', 'true');
+      worksMore.parentElement.hidden = true;
+      worksGrid.querySelector('.work-extra').focus();
+    });
+  }
+
   /* ---------- Works lightbox ---------- */
   const lb = document.getElementById('lightbox');
   if (lb && typeof lb.showModal === 'function') {

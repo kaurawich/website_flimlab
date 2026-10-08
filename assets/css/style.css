@@ -794,6 +794,13 @@ a.work:hover .work-media img { transform: scale(1.04); }
 }
 .work-cta p:not(.work-cta-title) { margin-bottom: 10px; color: var(--ink-2); }
 
+/* แสดง 5 งานแรกบนคอม แล้วกด "ดูผลงานทั้งหมด" (มือถือปัดดูได้ครบอยู่แล้ว) */
+.works-more { display: flex; justify-content: center; margin-top: 28px; }
+@media (min-width: 761px) {
+  .works.is-collapsed .work-extra { display: none; }
+  .works:not(.is-collapsed) .work-cta { grid-column: span 2; }
+}
+
 /* Lightbox */
 
 .lightbox {
@@ -1184,6 +1191,7 @@ details[open] .plus { transform: rotate(45deg); }
   .works::-webkit-scrollbar { display: none; }
   .work { flex: 0 0 80%; scroll-snap-align: start; }
   a.work:hover { transform: none; }
+  .works-more { display: none; }
   .lb-stage { padding: 0 8px calc(16px + env(safe-area-inset-bottom, 0px)); }
   .lb-nav { background: rgba(0, 0, 0, .45); }
   .lb-prev { left: 12px; }
