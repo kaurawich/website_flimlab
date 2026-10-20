@@ -1,5 +1,7 @@
 # FilmLab — เว็บไซต์รับติดฟิล์มอาคาร
 
+เว็บไซต์: **https://www.filmlabth.com** (GitHub Pages + โดเมน GoDaddy)
+
 เว็บหน้าเดียว (HTML/CSS/JS ล้วน) ไม่ต้องติดตั้งอะไร เปิด `index.html` ในเบราว์เซอร์ได้เลย
 
 ## ข้อมูลติดต่อ
