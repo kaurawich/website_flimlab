@@ -80,17 +80,6 @@
     }
   }
 
-  /* ---------- ปุ่มเลื่อนแถบผลงานซ้าย/ขวา ---------- */
-  document.querySelectorAll('[data-scroll][data-target]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const strip = document.getElementById(btn.dataset.target);
-      if (!strip) return;
-      const card = strip.querySelector('.work');
-      const step = card ? card.getBoundingClientRect().width + 20 : 320;
-      strip.scrollBy({ left: step * Number(btn.dataset.scroll), behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
-  });
-
   /* ---------- Film finder tabs ---------- */
   const tabs = [...document.querySelectorAll('.finder-tab')];
   const selectTab = (tab, focus) => {
@@ -112,18 +101,113 @@
     });
   });
 
-  /* ---------- Works: show first 5, expand on demand ---------- */
+  /* ---------- Works: สร้างการ์ดจาก works-data.js + ปุ่มกรอง + ดูทั้งหมด ---------- */
   const worksGrid = document.getElementById('works-grid');
-  const worksMore = document.getElementById('works-more');
-  if (worksGrid && worksMore && worksGrid.querySelector('.work-extra')) {
-    worksGrid.classList.add('is-collapsed');
-    worksMore.parentElement.hidden = false;
-    worksMore.addEventListener('click', () => {
-      worksGrid.classList.remove('is-collapsed');
-      worksMore.setAttribute('aria-expanded', 'true');
-      worksMore.parentElement.hidden = true;
-      worksGrid.querySelector('.work-extra').focus();
+  const works = Array.isArray(window.FILMLAB_WORKS) ? window.FILMLAB_WORKS : [];
+  if (worksGrid && works.length) {
+    const ALL = 'ทั้งหมด';
+    const FIRST = 6; // จำนวนงานที่แสดงก่อนกด "ดูผลงานทั้งหมด"
+    const TYPE_ORDER = ['บ้าน', 'คอนโด', 'สำนักงาน', 'ร้านค้า'];
+    const dir = 'assets/img/works/';
+    const cta = worksGrid.querySelector('.work-cta');
+    const filterBox = document.querySelector('.works-filter');
+    const moreWrap = document.querySelector('.works-more');
+    const moreBtn = document.getElementById('works-more');
+    let filter = ALL;
+    let expanded = false;
+
+    const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    const cards = works.map((w) => {
+      const n = Math.max(1, Number(w.photos) || 1);
+      const photos = Array.from({ length: n }, (_, i) => `${dir}${w.id}-${i + 1}.jpg`);
+      const a = document.createElement('a');
+      a.className = 'work';
+      a.href = photos[0];
+      a.dataset.title = w.title;
+      a.dataset.photos = photos.join(', ');
+      a.dataset.type = w.type || '';
+      a.innerHTML = `
+        <div class="work-media">
+          <img src="${dir}${esc(w.id)}-1-sm.jpg" srcset="${dir}${esc(w.id)}-1-sm.jpg 720w, ${dir}${esc(w.id)}-1.jpg 1400w" alt="${esc(w.alt || `${w.title} หลังติดฟิล์ม`)}" loading="lazy">
+          <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>${n} รูป</span>
+        </div>
+        <div class="work-body">
+          <p class="work-type">${esc(w.type)}</p>
+          <h3>${esc(w.title)}</h3>
+          <p class="work-film">${esc(w.film)}</p>
+        </div>`;
+      worksGrid.insertBefore(a, cta);
+      return a;
     });
+
+    // จัดเลย์เอาต์: งานแรกเป็นภาพใหญ่ แล้วขยายการ์ด LINE ให้เติมแถวสุดท้ายพอดี ไม่มีช่องว่าง
+    const layout = () => {
+      const match = cards.filter((c) => filter === ALL || c.dataset.type === filter);
+      const limit = filter === ALL && !expanded ? FIRST : Infinity;
+      const shown = match.slice(0, limit);
+      cards.forEach((c) => {
+        c.hidden = !shown.includes(c);
+        c.classList.remove('work-feature');
+      });
+
+      const cols = getComputedStyle(worksGrid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+      const feature = cols >= 2 && shown.length >= 2;
+      if (feature) shown[0].classList.add('work-feature');
+      shown.forEach((c) => {
+        c.querySelector('img').sizes = c.classList.contains('work-feature')
+          ? '(max-width: 760px) 100vw, 800px'
+          : '(max-width: 760px) 50vw, 400px';
+      });
+
+      let span = cols;
+      let rows = 1;
+      if (feature && cols === 3) {
+        const rest = shown.length - 1;
+        if (rest === 0) { span = 1; rows = 2; } else if (rest === 1) { span = 1; } else { span = 3 - ((rest - 2) % 3); }
+      } else {
+        const rest = feature ? shown.length - 1 : shown.length;
+        span = cols - (rest % cols);
+      }
+      cta.style.gridColumn = `span ${span}`;
+      cta.style.gridRow = rows > 1 ? `span ${rows}` : '';
+      cta.classList.toggle('is-wide', span === cols && cols > 1);
+
+      const hasMore = filter === ALL && !expanded && match.length > FIRST;
+      moreWrap.hidden = !hasMore;
+      moreBtn.textContent = `ดูผลงานทั้งหมด (${match.length} งาน)`;
+    };
+
+    const present = [...new Set(works.map((w) => w.type).filter(Boolean))];
+    const types = [ALL, ...TYPE_ORDER.filter((t) => present.includes(t)), ...present.filter((t) => !TYPE_ORDER.includes(t))];
+    types.forEach((t) => {
+      const count = t === ALL ? works.length : works.filter((w) => w.type === t).length;
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.innerHTML = `${esc(t)}<span>${count}</span>`;
+      b.setAttribute('aria-pressed', String(t === filter));
+      b.addEventListener('click', () => {
+        filter = t;
+        filterBox.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        layout();
+      });
+      filterBox.appendChild(b);
+    });
+
+    moreBtn.addEventListener('click', (e) => {
+      expanded = true;
+      moreBtn.setAttribute('aria-expanded', 'true');
+      layout();
+      const next = cards.filter((c) => !c.hidden)[FIRST];
+      if (next && e.detail === 0) next.focus(); // ย้ายโฟกัสเฉพาะตอนกดด้วยคีย์บอร์ด
+    });
+
+    ['(max-width: 1060px)', '(max-width: 760px)'].forEach((q) => {
+      const mq = window.matchMedia(q);
+      if (mq.addEventListener) mq.addEventListener('change', layout);
+    });
+    layout();
   }
 
   /* ---------- Works lightbox ---------- */
