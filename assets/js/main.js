@@ -80,6 +80,17 @@
     }
   }
 
+  /* ---------- ปุ่มเลื่อนแถบผลงานซ้าย/ขวา ---------- */
+  document.querySelectorAll('[data-scroll][data-target]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const strip = document.getElementById(btn.dataset.target);
+      if (!strip) return;
+      const card = strip.querySelector('.work');
+      const step = card ? card.getBoundingClientRect().width + 20 : 320;
+      strip.scrollBy({ left: step * Number(btn.dataset.scroll), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+
   /* ---------- Film finder tabs ---------- */
   const tabs = [...document.querySelectorAll('.finder-tab')];
   const selectTab = (tab, focus) => {
