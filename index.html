@@ -17,7 +17,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Prompt:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
@@ -38,21 +38,14 @@
 <!-- ตั้งค่า LINE ID ของบริษัทที่ data-line-id (ใช้กับปุ่ม "ถามราคา" และฟอร์ม) -->
 <body data-line-id="@filmlab">
 
-  <!-- ไอคอนและภาพวิวหน้าต่าง (ใช้ซ้ำทั้งหน้า) -->
   <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
-    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-drag" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
-    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-8 8"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
     <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
@@ -63,10 +56,9 @@
 
   <!-- ===== Header ===== -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="logo" aria-label="Film Lab หน้าแรก">
-        <img class="logo-img" src="assets/img/logo.png" alt="Film Lab" width="114" height="48">
-        <span class="logo-tag">รับติดฟิล์มอาคาร<br>หลายแบรนด์ชั้นนำ</span>
+    <div class="wrap header-inner">
+      <a href="#top" class="site-logo" aria-label="Film Lab หน้าแรก">
+        <img src="assets/img/logo.png" alt="Film Lab" width="114" height="48">
       </a>
 
       <nav class="nav" aria-label="เมนูหลัก">
@@ -78,7 +70,7 @@
       </nav>
 
       <div class="header-cta">
-        <a class="header-phone" href="tel:0805635355"><svg class="i"><use href="#i-phone"/></svg>080-563-5355</a>
+        <a class="header-phone" href="tel:0805635355">080-563-5355</a>
         <a class="btn btn-line btn-sm" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">
           <svg class="i i-fill"><use href="#i-line"/></svg>ปรึกษาฟรี
         </a>
@@ -90,53 +82,56 @@
 
     <!-- ===== Hero ===== -->
     <section class="hero" id="top">
-      <div class="container hero-grid">
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">รับติดฟิล์มอาคาร · บ้าน · คอนโด · สำนักงาน</p>
-          <h1>บ้านเย็นขึ้น<br>ค่าไฟลดลง<br><span class="grad">ด้วยฟิล์มที่ใช่</span></h1>
+          <p class="label"><span class="en">Window Film · Bangkok</span>รับติดฟิล์มอาคาร บ้าน คอนโด</p>
+          <h1 class="hero-title">
+            <span>บ้านเย็นขึ้น</span>
+            <span>ค่าไฟลดลง</span>
+            <span class="accent">ด้วยฟิล์มที่ใช่</span>
+          </h1>
           <p class="lead">รวมฟิล์มหลายแบรนด์ชั้นนำไว้ในที่เดียว เราช่วยเทียบให้ตรงงบ ตรงปัญหา พร้อมทีมช่างติดตั้งมืออาชีพ</p>
 
           <div class="hero-actions">
             <a class="btn btn-line btn-lg" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">
               <svg class="i i-fill"><use href="#i-line"/></svg>ปรึกษาฟรีทาง LINE
             </a>
-            <a class="btn btn-ghost btn-lg" href="tel:0805635355">
-              <svg class="i"><use href="#i-phone"/></svg>โทร 080-563-5355
-            </a>
+            <a class="link-arrow" href="tel:0805635355">โทร 080-563-5355<svg class="i"><use href="#i-arrow"/></svg></a>
           </div>
 
-          <ul class="checks">
+          <ul class="hero-points">
             <li><svg class="i"><use href="#i-check"/></svg>ส่งรูปประเมินราคาฟรี</li>
             <li><svg class="i"><use href="#i-check"/></svg>ช่วยเลือกฟิล์มตามงบ</li>
             <li><svg class="i"><use href="#i-check"/></svg>รับประกันงานติดตั้ง</li>
           </ul>
         </div>
 
-        <div class="hero-visual">
+        <figure class="hero-figure">
+          <div class="dim" aria-hidden="true"><span>ไม่ติดฟิล์ม</span><i></i><span>ติดฟิล์มกันร้อน</span></div>
           <div class="ba">
             <div class="ba-layer ba-before">
               <!-- ภาพ: Kirandeep Singh Walia / Pexels (ใช้เชิงพาณิชย์ได้ฟรี) -->
-              <img class="ba-photo" src="assets/img/hero/ratchadamri-1600.jpg" srcset="assets/img/hero/ratchadamri-800.jpg 800w, assets/img/hero/ratchadamri-1600.jpg 1600w" sizes="(max-width: 1020px) 100vw, 560px" alt="วิวตึกสูงกรุงเทพฯ ย่านราชดำริ" fetchpriority="high">
+              <img class="ba-photo" src="assets/img/hero/ratchadamri-1600.jpg" srcset="assets/img/hero/ratchadamri-800.jpg 800w, assets/img/hero/ratchadamri-1600.jpg 1600w" sizes="(max-width: 1060px) 100vw, 680px" alt="วิวตึกสูงกรุงเทพฯ ย่านราชดำริ" fetchpriority="high">
               <div class="glare"></div>
-              <span class="ba-badge"><svg class="i"><use href="#i-thermo"/></svg>38°C</span>
-              <span class="ba-label">ไม่ติดฟิล์ม</span>
+              <span class="ba-badge">38°C</span>
             </div>
             <div class="ba-layer ba-after">
-              <img class="ba-photo" src="assets/img/hero/ratchadamri-1600.jpg" srcset="assets/img/hero/ratchadamri-800.jpg 800w, assets/img/hero/ratchadamri-1600.jpg 1600w" sizes="(max-width: 1020px) 100vw, 560px" alt="">
+              <img class="ba-photo" src="assets/img/hero/ratchadamri-1600.jpg" srcset="assets/img/hero/ratchadamri-800.jpg 800w, assets/img/hero/ratchadamri-1600.jpg 1600w" sizes="(max-width: 1060px) 100vw, 680px" alt="">
               <div class="tint"></div>
-              <span class="ba-badge"><svg class="i"><use href="#i-thermo"/></svg>27°C</span>
-              <span class="ba-label">ติดฟิล์มกันร้อน</span>
+              <span class="ba-badge">27°C</span>
             </div>
-            <div class="ba-frame"></div>
             <div class="ba-handle"><span class="ba-knob"><svg class="i"><use href="#i-drag"/></svg></span></div>
             <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="เลื่อนเพื่อเปรียบเทียบก่อนและหลังติดฟิล์ม">
           </div>
-          <p class="ba-caption">ลากเพื่อเปรียบเทียบ · ภาพจำลองประกอบเท่านั้น</p>
-        </div>
+          <figcaption class="fig-cap">
+            <span class="en">Fig. 01 — Ratchadamri, Bangkok</span>
+            <span>ลากเพื่อเปรียบเทียบ · ภาพจำลองประกอบเท่านั้น</span>
+          </figcaption>
+        </figure>
       </div>
 
-      <div class="container">
-        <ul class="stats">
+      <div class="wrap">
+        <ul class="spec">
           <li><strong>99%</strong><span>กันรังสี UV</span></li>
           <li><strong>60%+</strong><span>ลดความร้อนผ่านกระจก*</span></li>
           <li><strong>8+</strong><span>แบรนด์ชั้นนำให้เลือกเทียบ</span></li>
@@ -148,39 +143,44 @@
 
     <!-- ===== Film finder ===== -->
     <section class="section" id="finder">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker">เลือกฟิล์มให้ตรงปัญหา</p>
-          <h2>ปัญหาแบบไหน ฟิล์มแบบนั้น</h2>
-          <p>เลือกสิ่งที่คุณกังวลที่สุด แล้วดูว่าฟิล์มแบบไหนเหมาะกับบ้านคุณ</p>
-        </div>
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="label"><span class="en">Film guide</span>เลือกฟิล์มตามปัญหา</p>
+            <h2>ปัญหาแบบไหน<br>ฟิล์มแบบนั้น</h2>
+          </div>
+          <p class="sec-intro">เลือกสิ่งที่คุณกังวลที่สุด แล้วดูว่าฟิล์มแบบไหนเหมาะกับบ้านคุณ</p>
+        </header>
 
         <div class="finder">
           <div class="finder-tabs" role="tablist" aria-label="ปัญหาที่พบ">
             <button class="finder-tab" role="tab" id="tab-heat" aria-controls="panel-heat" aria-selected="true">
-              <span class="tab-icon"><svg class="i"><use href="#i-sun"/></svg></span>
-              <span><strong>บ้านร้อน แดดส่องทั้งวัน</strong><small>ฟิล์มกันร้อน</small></span>
+              <span class="code">GL-01</span>
+              <span class="tab-text"><strong>บ้านร้อน แดดส่องทั้งวัน</strong><small>ฟิล์มกันร้อน</small></span>
+              <svg class="i"><use href="#i-arrow"/></svg>
             </button>
             <button class="finder-tab" role="tab" id="tab-privacy" aria-controls="panel-privacy" aria-selected="false" tabindex="-1">
-              <span class="tab-icon"><svg class="i"><use href="#i-eye"/></svg></span>
-              <span><strong>ไม่อยากให้คนข้างนอกมองเห็น</strong><small>ฟิล์มปรอท</small></span>
+              <span class="code">GL-02</span>
+              <span class="tab-text"><strong>ไม่อยากให้คนข้างนอกมองเห็น</strong><small>ฟิล์มปรอท</small></span>
+              <svg class="i"><use href="#i-arrow"/></svg>
             </button>
             <button class="finder-tab" role="tab" id="tab-safety" aria-controls="panel-safety" aria-selected="false" tabindex="-1">
-              <span class="tab-icon"><svg class="i"><use href="#i-shield"/></svg></span>
-              <span><strong>กลัวกระจกแตก อยากกันขโมย</strong><small>ฟิล์มนิรภัย</small></span>
+              <span class="code">GL-03</span>
+              <span class="tab-text"><strong>กลัวกระจกแตก อยากกันขโมย</strong><small>ฟิล์มนิรภัย</small></span>
+              <svg class="i"><use href="#i-arrow"/></svg>
             </button>
             <button class="finder-tab" role="tab" id="tab-decor" aria-controls="panel-decor" aria-selected="false" tabindex="-1">
-              <span class="tab-icon"><svg class="i"><use href="#i-sparkle"/></svg></span>
-              <span><strong>อยากกั้นห้อง หรือแต่งกระจก</strong><small>ฟิล์มฝ้า / ตกแต่ง</small></span>
+              <span class="code">GL-04</span>
+              <span class="tab-text"><strong>อยากกั้นห้อง หรือแต่งกระจก</strong><small>ฟิล์มฝ้า / ตกแต่ง</small></span>
+              <svg class="i"><use href="#i-arrow"/></svg>
             </button>
           </div>
 
           <div class="finder-panels">
             <div class="finder-panel" role="tabpanel" id="panel-heat" aria-labelledby="tab-heat">
-              <div class="swatch swatch-heat"><span>ใส มองวิวชัด</span></div>
+              <div class="swatch swatch-heat"><span class="swatch-code">GL-01</span><span class="swatch-cap">ใส มองวิวชัด</span></div>
               <div class="panel-body">
-                <span class="pill">แนะนำ</span>
-                <h3>ฟิล์มกันร้อนเซรามิก / นาโน</h3>
+                <h3><span class="nw">ฟิล์มกันร้อน</span><span class="nw">เซรามิก / นาโน</span></h3>
                 <p>ลดความร้อนได้มากโดยไม่ต้องใช้ฟิล์มสีเข้ม มองวิวได้ชัดเหมือนเดิม ห้องไม่มืด และช่วยให้แอร์ทำงานเบาลง</p>
                 <h4>เหมาะกับ</h4>
                 <ul class="ticks">
@@ -193,10 +193,9 @@
             </div>
 
             <div class="finder-panel" role="tabpanel" id="panel-privacy" aria-labelledby="tab-privacy" hidden>
-              <div class="swatch swatch-privacy"><span>ข้างนอกเห็นเป็นเงา</span></div>
+              <div class="swatch swatch-privacy"><span class="swatch-code">GL-02</span><span class="swatch-cap">ข้างนอกเห็นเป็นเงา</span></div>
               <div class="panel-body">
-                <span class="pill">แนะนำ</span>
-                <h3>ฟิล์มปรอท / ฟิล์มสะท้อนแสง</h3>
+                <h3><span class="nw">ฟิล์มปรอท /</span> <span class="nw">ฟิล์มสะท้อนแสง</span></h3>
                 <p>ตอนกลางวันคนข้างนอกจะเห็นเป็นกระจกเงา แต่ข้างในยังมองออกไปได้ปกติ ได้ทั้งความเป็นส่วนตัวและกันร้อนไปพร้อมกัน</p>
                 <h4>เหมาะกับ</h4>
                 <ul class="ticks">
@@ -210,10 +209,9 @@
             </div>
 
             <div class="finder-panel" role="tabpanel" id="panel-safety" aria-labelledby="tab-safety" hidden>
-              <div class="swatch swatch-safety"><span>กระจกแตกไม่กระจาย</span></div>
+              <div class="swatch swatch-safety"><span class="swatch-code">GL-03</span><span class="swatch-cap">กระจกแตกไม่กระจาย</span></div>
               <div class="panel-body">
-                <span class="pill">แนะนำ</span>
-                <h3>ฟิล์มนิรภัย (Safety Film)</h3>
+                <h3><span class="nw">ฟิล์มนิรภัย</span> <span class="nw">(Safety Film)</span></h3>
                 <p>เนื้อฟิล์มหนาพิเศษ ช่วยยึดเศษกระจกไว้เมื่อกระจกแตก ลดอันตรายจากเศษคม และทำให้ทุบกระจกเข้ามาได้ยากขึ้น</p>
                 <h4>เหมาะกับ</h4>
                 <ul class="ticks">
@@ -226,10 +224,9 @@
             </div>
 
             <div class="finder-panel" role="tabpanel" id="panel-decor" aria-labelledby="tab-decor" hidden>
-              <div class="swatch swatch-decor"><span>ฝ้า / ลวดลาย</span></div>
+              <div class="swatch swatch-decor"><span class="swatch-code">GL-04</span><span class="swatch-cap">ฝ้า / ลวดลาย</span></div>
               <div class="panel-body">
-                <span class="pill">แนะนำ</span>
-                <h3>ฟิล์มฝ้า / ฟิล์มตกแต่ง</h3>
+                <h3><span class="nw">ฟิล์มฝ้า /</span> <span class="nw">ฟิล์มตกแต่ง</span></h3>
                 <p>เปลี่ยนกระจกใสให้เป็นฝ้าหรือมีลวดลาย ได้ความเป็นส่วนตัวโดยแสงยังผ่านได้ ทำแถบคาดกระจกหรือโลโก้บริษัทก็ได้</p>
                 <h4>เหมาะกับ</h4>
                 <ul class="ticks">
@@ -246,13 +243,15 @@
     </section>
 
     <!-- ===== Brands ===== -->
-    <section class="section section-alt" id="brands">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker">หลายแบรนด์ชั้นนำ</p>
-          <h2>ฟิล์มแบรนด์ชั้นนำในไทย<br>รวมไว้ที่นี่ที่เดียว</h2>
-          <p>เราไม่ผูกกับแบรนด์ไหน จึงแนะนำได้ตรงไปตรงมา ตรงงบ และตรงกับการใช้งานจริง</p>
-        </div>
+    <section class="section section-white" id="brands">
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="label"><span class="en">Brands</span>หลายแบรนด์ชั้นนำ</p>
+            <h2>ฟิล์มแบรนด์ชั้นนำในไทย<br>รวมไว้ที่นี่ที่เดียว</h2>
+          </div>
+          <p class="sec-intro">เราไม่ผูกกับแบรนด์ไหน จึงแนะนำได้ตรงไปตรงมา ตรงงบ และตรงกับการใช้งานจริง</p>
+        </header>
 
         <!-- แก้ไข/เพิ่มแบรนด์ได้ที่รายการนี้ (โลโก้อยู่ใน assets/img/brands, ปรับขนาดด้วย --h) -->
         <ul class="brand-grid">
@@ -264,202 +263,152 @@
           <li class="brand"><img src="assets/img/brands/xtra-cole.png" alt="Xtra-Cole" style="--h: 50px" loading="lazy"></li>
           <li class="brand"><img src="assets/img/brands/smarttec.png" alt="Smarttec" style="--h: 38px" loading="lazy"></li>
           <li class="brand"><img src="assets/img/brands/litetec.png" alt="LiteTec" style="--h: 42px" loading="lazy"></li>
-          <li class="brand brand-more"><svg class="i"><use href="#i-plus"/></svg><span><span>สนใจแบรนด์อื่น</span> <span>สอบถามเพิ่มเติมได้</span></span></li>
+          <li class="brand-more">
+            <p><strong>ไม่แน่ใจว่าแบรนด์ไหนคุ้ม?</strong> ส่งรูปหน้าต่างมา เราจะเทียบ 2–3 ตัวเลือกตามงบให้ดูก่อนตัดสินใจ · สนใจแบรนด์อื่น สอบถามเพิ่มเติมได้</p>
+            <a class="link-arrow" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">ส่งรูปทาง LINE<svg class="i"><use href="#i-arrow"/></svg></a>
+          </li>
         </ul>
-
-        <div class="brand-note">
-          <p><strong>ไม่แน่ใจว่าแบรนด์ไหนคุ้ม?</strong> ส่งรูปหน้าต่างมา เราจะเทียบ 2–3 ตัวเลือกตามงบให้ดูก่อนตัดสินใจ</p>
-          <a class="btn btn-line" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill"><use href="#i-line"/></svg>ส่งรูปทาง LINE</a>
-        </div>
         <p class="fineprint">ชื่อแบรนด์และเครื่องหมายการค้าเป็นของเจ้าของแต่ละราย</p>
       </div>
     </section>
 
     <!-- ===== Works ===== -->
     <section class="section" id="works">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker">ผลงานของเรา</p>
-          <h2>งานติดฟิล์มที่ผ่านมา</h2>
-          <p>บ้าน คอนโด ร้านค้า และอาคารสำนักงาน ติดตั้งโดยทีมช่างของเรา กดที่การ์ดเพื่อดูรูปทั้งหมด</p>
-        </div>
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="label"><span class="en">Selected works</span>ผลงานของเรา</p>
+            <h2>งานติดฟิล์มที่ผ่านมา</h2>
+          </div>
+          <p class="sec-intro">บ้าน คอนโด ร้านค้า และอาคารสำนักงาน ติดตั้งโดยทีมช่างของเรา กดที่ภาพเพื่อดูรูปทั้งหมด</p>
+        </header>
 
         <!--
           เพิ่ม/แก้ผลงาน: วางรูปไว้ที่ assets/img/works/ แล้วคัดลอกการ์ด <a class="work"> หนึ่งใบไปแก้
-          - <img src> = รูปปก (ไฟล์ -sm ขนาดเล็ก)
+          - <img src> = รูปปก (ไฟล์ -sm ขนาดเล็ก ยกเว้นการ์ดใหญ่ "work-big" ใช้ไฟล์เต็ม)
           - data-photos = รูปทั้งหมดของงานนั้น คั่นด้วยเครื่องหมาย ,
           - การ์ดที่มี class "work-extra" จะซ่อนไว้บนคอม จนกว่าจะกดปุ่ม "ดูผลงานทั้งหมด"
         -->
         <div class="works" id="works-grid">
-          <a class="work" href="assets/img/works/theroom-1.jpg" data-title="คอนโด The Room พระราม 4"
+          <a class="work work-big" href="assets/img/works/theroom-1.jpg" data-title="คอนโด The Room พระราม 4"
              data-photos="assets/img/works/theroom-1.jpg, assets/img/works/theroom-2.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/theroom-1-sm.jpg" alt="หน้าต่างคอนโด The Room พระราม 4 หลังติดฟิล์ม มองเห็นวิวเมือง" loading="lazy">
-              <span class="work-tag">คอนโด</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>2 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>คอนโด The Room พระราม 4</h3>
-              <p>ฟิล์ม LiteTec รุ่น CX-15</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/theroom-1.jpg" alt="หน้าต่างคอนโด The Room พระราม 4 หลังติดฟิล์ม มองเห็นวิวเมือง" loading="lazy"></div>
+            <div class="work-meta"><span>คอนโด</span><span>2 รูป</span></div>
+            <h3>คอนโด The Room พระราม 4</h3>
+            <p>ฟิล์ม LiteTec รุ่น CX-15</p>
           </a>
 
           <a class="work" href="assets/img/works/bangkokpirom-1.jpg" data-title="หมู่บ้านบางกอกภิรมย์ (ตลิ่งชัน)"
              data-photos="assets/img/works/bangkokpirom-1.jpg, assets/img/works/bangkokpirom-2.jpg, assets/img/works/bangkokpirom-3.jpg, assets/img/works/bangkokpirom-4.jpg, assets/img/works/bangkokpirom-5.jpg, assets/img/works/bangkokpirom-6.jpg, assets/img/works/bangkokpirom-7.jpg, assets/img/works/bangkokpirom-8.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/bangkokpirom-1-sm.jpg" alt="หน้าต่างบ้านในหมู่บ้านบางกอกภิรมย์ หลังติดฟิล์ม" loading="lazy">
-              <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>8 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>หมู่บ้านบางกอกภิรมย์ (ตลิ่งชัน)</h3>
-              <p>ฟิล์ม 3M รุ่น Ceramate (CRM)</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/bangkokpirom-1-sm.jpg" alt="หน้าต่างบ้านในหมู่บ้านบางกอกภิรมย์ หลังติดฟิล์ม" loading="lazy"></div>
+            <div class="work-meta"><span>บ้าน</span><span>8 รูป</span></div>
+            <h3>หมู่บ้านบางกอกภิรมย์ (ตลิ่งชัน)</h3>
+            <p>ฟิล์ม 3M รุ่น Ceramate (CRM)</p>
           </a>
 
           <a class="work" href="assets/img/works/sridan20-1.jpg" data-title="บ้านเดี่ยว ซ.ศรีด่าน 20"
              data-photos="assets/img/works/sridan20-1.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/sridan20-1-sm.jpg" alt="กระจกสูงโถงบันได บ้านเดี่ยว ซ.ศรีด่าน 20" loading="lazy">
-              <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>1 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>บ้านเดี่ยว ซ.ศรีด่าน 20</h3>
-              <p>กระจกสูงโถงบันได</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/sridan20-1-sm.jpg" alt="กระจกสูงโถงบันได บ้านเดี่ยว ซ.ศรีด่าน 20" loading="lazy"></div>
+            <div class="work-meta"><span>บ้าน</span><span>1 รูป</span></div>
+            <h3>บ้านเดี่ยว ซ.ศรีด่าน 20</h3>
+            <p>กระจกสูงโถงบันได</p>
           </a>
 
           <a class="work" href="assets/img/works/sophonwit-1.jpg" data-title="บริษัท โสภณวิชญ์เอ็นจิเนียริ่ง จำกัด"
              data-photos="assets/img/works/sophonwit-1.jpg, assets/img/works/sophonwit-2.jpg, assets/img/works/sophonwit-3.jpg, assets/img/works/sophonwit-4.jpg, assets/img/works/sophonwit-5.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/sophonwit-1-sm.jpg" alt="กระจกอาคารสำนักงาน หลังติดฟิล์ม มองจากด้านนอก" loading="lazy">
-              <span class="work-tag">สำนักงาน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>5 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>บริษัท โสภณวิชญ์เอ็นจิเนียริ่ง จำกัด</h3>
-              <p>ฟิล์ม 3M</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/sophonwit-1-sm.jpg" alt="กระจกอาคารสำนักงาน หลังติดฟิล์ม มองจากด้านนอก" loading="lazy"></div>
+            <div class="work-meta"><span>สำนักงาน</span><span>5 รูป</span></div>
+            <h3>บริษัท โสภณวิชญ์เอ็นจิเนียริ่ง จำกัด</h3>
+            <p>ฟิล์ม 3M</p>
           </a>
 
           <a class="work" href="assets/img/works/centro-1.jpg" data-title="หมู่บ้านเซนโทร อ่อนนุช–สุวรรณภูมิ (กิ่งแก้ว)"
              data-photos="assets/img/works/centro-1.jpg, assets/img/works/centro-2.jpg, assets/img/works/centro-3.jpg, assets/img/works/centro-4.jpg, assets/img/works/centro-5.jpg, assets/img/works/centro-6.jpg, assets/img/works/centro-7.jpg, assets/img/works/centro-8.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/centro-1-sm.jpg" alt="หน้าต่างวงกลม บ้านในหมู่บ้านเซนโทร หลังติดฟิล์ม" loading="lazy">
-              <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>8 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>หมู่บ้านเซนโทร อ่อนนุช–สุวรรณภูมิ (กิ่งแก้ว)</h3>
-              <p>ฟิล์ม LiteTec รุ่น CC20</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/centro-1-sm.jpg" alt="หน้าต่างวงกลม บ้านในหมู่บ้านเซนโทร หลังติดฟิล์ม" loading="lazy"></div>
+            <div class="work-meta"><span>บ้าน</span><span>8 รูป</span></div>
+            <h3>หมู่บ้านเซนโทร อ่อนนุช–สุวรรณภูมิ (กิ่งแก้ว)</h3>
+            <p>ฟิล์ม LiteTec รุ่น CC20</p>
+          </a>
+
+          <a class="work work-extra work-big work-big-right" href="assets/img/works/condo-rama3-1.jpg" data-title="คอนโด พระราม 3"
+             data-photos="assets/img/works/condo-rama3-1.jpg">
+            <div class="work-media"><img src="assets/img/works/condo-rama3-1.jpg" alt="หน้าต่างคอนโดพระราม 3 หลังติดฟิล์ม มองเห็นวิวแม่น้ำเจ้าพระยา" loading="lazy"></div>
+            <div class="work-meta"><span>คอนโด</span><span>1 รูป</span></div>
+            <h3>คอนโด พระราม 3</h3>
+            <p>หน้าต่างวิวแม่น้ำเจ้าพระยา</p>
           </a>
 
           <a class="work work-extra" href="assets/img/works/siam-1.jpg" data-title="สยามอาคารชุด ซ.พหลโยธิน 52 แยก 16"
              data-photos="assets/img/works/siam-1.jpg, assets/img/works/siam-2.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/siam-1-sm.jpg" alt="หน้าต่างห้องชุด สยามอาคารชุด หลังติดฟิล์ม" loading="lazy">
-              <span class="work-tag">คอนโด</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>2 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>สยามอาคารชุด ซ.พหลโยธิน 52 แยก 16</h3>
-              <p>ฟิล์ม 3M รุ่น CRM15</p>
-            </div>
-          </a>
-
-          <a class="work work-extra" href="assets/img/works/condo-rama3-1.jpg" data-title="คอนโด พระราม 3"
-             data-photos="assets/img/works/condo-rama3-1.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/condo-rama3-1-sm.jpg" alt="หน้าต่างคอนโดพระราม 3 หลังติดฟิล์ม มองเห็นวิวแม่น้ำเจ้าพระยา" loading="lazy">
-              <span class="work-tag">คอนโด</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>1 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>คอนโด พระราม 3</h3>
-              <p>หน้าต่างวิวแม่น้ำเจ้าพระยา</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/siam-1-sm.jpg" alt="หน้าต่างห้องชุด สยามอาคารชุด หลังติดฟิล์ม" loading="lazy"></div>
+            <div class="work-meta"><span>คอนโด</span><span>2 รูป</span></div>
+            <h3>สยามอาคารชุด ซ.พหลโยธิน 52 แยก 16</h3>
+            <p>ฟิล์ม 3M รุ่น CRM15</p>
           </a>
 
           <a class="work work-extra" href="assets/img/works/sukhon19-1.jpg" data-title="บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19"
              data-photos="assets/img/works/sukhon19-1.jpg, assets/img/works/sukhon19-2.jpg, assets/img/works/sukhon19-3.jpg, assets/img/works/sukhon19-4.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/sukhon19-1-sm.jpg" alt="ประตูกระจกห้องนอนออกระเบียง บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19" loading="lazy">
-              <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>4 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19</h3>
-              <p>ฟิล์ม 3M</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/sukhon19-1-sm.jpg" alt="ประตูกระจกห้องนอนออกระเบียง บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19" loading="lazy"></div>
+            <div class="work-meta"><span>บ้าน</span><span>4 รูป</span></div>
+            <h3>บ้านเดี่ยว ซ.สุคนธสวัสดิ์ 19</h3>
+            <p>ฟิล์ม 3M</p>
           </a>
 
           <a class="work work-extra" href="assets/img/works/cafe-1.jpg" data-title="ร้านกาแฟ สนามหลวง (ซ.คุรุฑ)"
              data-photos="assets/img/works/cafe-1.jpg, assets/img/works/cafe-2.jpg, assets/img/works/cafe-3.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/cafe-1-sm.jpg" alt="กระจกร้านกาแฟ สนามหลวง หลังติดฟิล์ม" loading="lazy">
-              <span class="work-tag">ร้านค้า</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>3 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>ร้านกาแฟ สนามหลวง (ซ.คุรุฑ)</h3>
-              <p>ฟิล์ม LiteTec รุ่น CX-65</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/cafe-1-sm.jpg" alt="กระจกร้านกาแฟ สนามหลวง หลังติดฟิล์ม" loading="lazy"></div>
+            <div class="work-meta"><span>ร้านค้า</span><span>3 รูป</span></div>
+            <h3>ร้านกาแฟ สนามหลวง (ซ.คุรุฑ)</h3>
+            <p>ฟิล์ม LiteTec รุ่น CX-65</p>
           </a>
 
           <a class="work work-extra" href="assets/img/works/lamlukka4-1.jpg" data-title="บ้านเดี่ยว ลำลูกกา คลอง 4"
              data-photos="assets/img/works/lamlukka4-1.jpg, assets/img/works/lamlukka4-2.jpg, assets/img/works/lamlukka4-3.jpg, assets/img/works/lamlukka4-4.jpg, assets/img/works/lamlukka4-5.jpg, assets/img/works/lamlukka4-6.jpg, assets/img/works/lamlukka4-7.jpg, assets/img/works/lamlukka4-8.jpg, assets/img/works/lamlukka4-9.jpg, assets/img/works/lamlukka4-10.jpg">
-            <div class="work-media">
-              <img src="assets/img/works/lamlukka4-1-sm.jpg" alt="หน้าต่างบ้านเดี่ยว ลำลูกกา คลอง 4 หลังติดฟิล์ม" loading="lazy">
-              <span class="work-tag">บ้าน</span>
-              <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>10 รูป</span>
-            </div>
-            <div class="work-body">
-              <h3>บ้านเดี่ยว ลำลูกกา คลอง 4</h3>
-              <p>หน้าต่างและประตูกระจกหลายจุดในบ้าน</p>
-            </div>
+            <div class="work-media"><img src="assets/img/works/lamlukka4-1-sm.jpg" alt="หน้าต่างบ้านเดี่ยว ลำลูกกา คลอง 4 หลังติดฟิล์ม" loading="lazy"></div>
+            <div class="work-meta"><span>บ้าน</span><span>10 รูป</span></div>
+            <h3>บ้านเดี่ยว ลำลูกกา คลอง 4</h3>
+            <p>หน้าต่างและประตูกระจกหลายจุดในบ้าน</p>
           </a>
-
-          <div class="work work-cta">
-            <p class="work-cta-title">อยากเห็นงานใกล้บ้านคุณ?</p>
-            <p>ทัก LINE ขอดูรูปงานเพิ่ม หรือส่งรูปหน้าต่างมาประเมินราคาฟรี</p>
-            <a class="btn btn-line" href="#contact" data-line-msg="สวัสดี ขอดูรูปผลงานติดฟิล์มเพิ่มเติมหน่อย"><svg class="i i-fill"><use href="#i-line"/></svg>ขอดูรูปผลงานทาง LINE</a>
-          </div>
         </div>
 
-        <div class="works-more" hidden>
-          <button class="btn btn-ghost" type="button" id="works-more" aria-controls="works-grid" aria-expanded="false">ดูผลงานทั้งหมด (10 งาน)</button>
+        <div class="works-foot">
+          <p>อยากเห็นงานใกล้บ้านคุณ? <a class="link-arrow" href="#contact" data-line-msg="สวัสดี ขอดูรูปผลงานติดฟิล์มเพิ่มเติมหน่อย">ขอดูรูปผลงานทาง LINE<svg class="i"><use href="#i-arrow"/></svg></a></p>
+          <div class="works-more" hidden>
+            <button class="btn btn-ghost" type="button" id="works-more" aria-controls="works-grid" aria-expanded="false">ดูผลงานทั้งหมด (10 งาน)</button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Process ===== -->
-    <section class="section section-alt" id="process">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker">ขั้นตอนการทำงาน</p>
-          <h2>ง่าย ๆ แค่ 4 ขั้นตอน</h2>
-        </div>
+    <section class="section section-white" id="process">
+      <div class="wrap">
+        <header class="sec-head">
+          <div>
+            <p class="label"><span class="en">Process</span>ขั้นตอนการทำงาน</p>
+            <h2>ง่าย ๆ แค่ 4 ขั้นตอน</h2>
+          </div>
+          <p class="sec-intro">เริ่มจากรูปถ่ายหน้าต่างของคุณ ไม่ต้องรอนัดดูหน้างาน</p>
+        </header>
 
         <ol class="steps">
           <li class="step">
-            <span class="step-num">1</span>
+            <span class="step-num">01</span>
             <h3>ส่งรูปและขนาดกระจก</h3>
             <p>ถ่ายรูปหน้าต่าง พร้อมขนาดกว้าง × สูงคร่าว ๆ ส่งมาทาง LINE</p>
           </li>
           <li class="step">
-            <span class="step-num">2</span>
+            <span class="step-num">02</span>
             <h3>ประเมินราคา</h3>
             <p>แนะนำรุ่นที่เหมาะกับปัญหาและงบ พร้อมแจ้งราคา</p>
           </li>
           <li class="step">
-            <span class="step-num">3</span>
+            <span class="step-num">03</span>
             <h3>รับใบเสนอราคา</h3>
             <p>แจกแจงรุ่นฟิล์ม ราคา และเงื่อนไขรับประกันให้ชัดเจน</p>
           </li>
           <li class="step">
-            <span class="step-num">4</span>
+            <span class="step-num">04</span>
             <h3>นัดติดตั้งและรับประกัน</h3>
             <p>ช่างเข้าติดตั้งตามวันที่นัด เก็บงานสะอาด พร้อมใบรับประกันตามเงื่อนไขของแต่ละแบรนด์</p>
           </li>
@@ -469,12 +418,12 @@
 
     <!-- ===== FAQ ===== -->
     <section class="section" id="faq">
-      <div class="container faq-grid">
+      <div class="wrap faq-grid">
         <div class="faq-head">
-          <p class="kicker">คำถามที่พบบ่อย</p>
+          <p class="label"><span class="en">FAQ</span>คำถามที่พบบ่อย</p>
           <h2>สงสัยตรงไหน<br>ถามได้เลย</h2>
           <p>ไม่เจอคำตอบที่ต้องการ? ทักมาคุยกับทีมงานได้ทาง LINE</p>
-          <a class="btn btn-ghost" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill line-green"><use href="#i-line"/></svg>ถามทีมงาน</a>
+          <a class="link-arrow" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">ถามทีมงาน<svg class="i"><use href="#i-arrow"/></svg></a>
         </div>
 
         <div class="faq-list">
@@ -504,9 +453,9 @@
 
     <!-- ===== Contact ===== -->
     <section class="contact" id="contact">
-      <div class="container contact-grid">
+      <div class="wrap contact-grid">
         <div class="contact-copy">
-          <p class="kicker light">ประเมินราคาฟรี</p>
+          <p class="label light"><span class="en">Free quote</span>ประเมินราคาฟรี</p>
           <h2>ส่งรูปหน้าต่างมา<br>เราช่วยเลือกฟิล์มให้</h2>
           <p>บอกขนาดกระจกคร่าว ๆ หรือส่งรูปมาทาง LINE ทีมงานจะแนะนำฟิล์มที่เหมาะ และแจ้งราคาเบื้องต้นให้ฟรี ไม่มีข้อผูกมัด</p>
 
@@ -522,7 +471,7 @@
 
           <!-- QR สำหรับคนที่เปิดเว็บจากคอมพิวเตอร์ (ซ่อนบนมือถือ) -->
           <div class="line-qr">
-            <img src="assets/img/line-qr.svg" alt="QR code เพิ่มเพื่อน LINE @filmlab" width="112" height="112" loading="lazy">
+            <img src="assets/img/line-qr.svg" alt="QR code เพิ่มเพื่อน LINE @filmlab" width="104" height="104" loading="lazy">
             <div>
               <p class="line-qr-title">สแกนเพื่อแอด LINE</p>
               <p>เปิดกล้องมือถือหรือแอป LINE แล้วสแกน QR นี้<br>LINE ID: <strong>@filmlab</strong></p>
@@ -531,6 +480,7 @@
         </div>
 
         <form class="quote-form" id="quote-form" novalidate>
+          <p class="form-kicker">Quotation</p>
           <h3>ขอใบเสนอราคา</h3>
           <p class="sub">กรอกสั้น ๆ แล้วส่งเข้า LINE ได้ทันที</p>
 
@@ -586,12 +536,35 @@
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="#top" class="logo" aria-label="Film Lab กลับขึ้นด้านบน">
-        <img class="logo-img logo-light" src="assets/img/logo.png" alt="Film Lab" width="114" height="48" loading="lazy">
-        <span class="logo-tag">รับติดฟิล์มอาคาร บ้าน คอนโด สำนักงาน<br>โทร 080-563-5355 · เปิดทุกวัน 08:00–17:00 น.</span>
-      </a>
-      <p>© <span id="year">2026</span> Film Lab · กรุงเทพมหานคร</p>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="logo-light" src="assets/img/logo.png" alt="Film Lab" width="114" height="48" loading="lazy">
+          <p>รับติดฟิล์มอาคาร บ้าน คอนโด สำนักงาน หลายแบรนด์ชั้นนำ</p>
+        </div>
+        <div>
+          <p class="footer-title">ติดต่อ</p>
+          <ul class="footer-list">
+            <li><a href="tel:0805635355">080-563-5355</a></li>
+            <li><a href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener">LINE @filmlab</a></li>
+            <li>เปิดทุกวัน 08:00–17:00 น.</li>
+            <li>กรุงเทพฯ และปริมณฑล</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">เมนู</p>
+          <ul class="footer-list">
+            <li><a href="#finder">เลือกฟิล์ม</a></li>
+            <li><a href="#brands">แบรนด์</a></li>
+            <li><a href="#works">ผลงาน</a></li>
+            <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Film Lab · กรุงเทพมหานคร</p>
+        <p class="en">www.filmlabth.com</p>
+      </div>
     </div>
   </footer>
 
