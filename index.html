@@ -43,6 +43,8 @@
   <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
@@ -137,14 +139,43 @@
     <section class="section intro">
       <div class="wrap">
         <p class="index reveal">เกี่ยวกับเรา</p>
-        <p class="statement reveal">แดดส่องเข้าบ้านทั้งวัน <span class="nw">แอร์ทำงานหนัก</span> <span class="nw">ค่าไฟก็สูงตาม</span> <em>ฟิล์มกันร้อนที่เลือกถูกรุ่นช่วยได้</em></p>
+        <p class="statement reveal">แดดส่องเข้าบ้านทั้งวัน <span class="nw">แอร์ทำงานหนัก</span> <span class="nw">ค่าไฟก็สูงตาม</span> <em><span class="nw">ฟิล์มกันร้อน</span><span class="nw">ที่เลือกถูกรุ่นช่วยได้</span></em></p>
         <p class="statement-sub reveal">Film Lab ไม่ผูกกับแบรนด์ไหน เราช่วยเทียบฟิล์มหลายแบรนด์ชั้นนำ ให้ตรงกับบ้านและงบของคุณ แล้วติดตั้งให้โดยทีมช่างของเราเอง</p>
 
-        <ul class="bento reveal">
-          <li class="b-a"><strong>99%</strong><span>กันรังสี UV ช่วยถนอมผิว และไม่ให้เฟอร์นิเจอร์ซีดจาง</span></li>
-          <li class="b-b"><strong>60%+</strong><span>ลดความร้อนที่ผ่านกระจก*</span></li>
-          <li class="b-c"><strong>8+</strong><span>แบรนด์ชั้นนำให้เลือกเทียบ</span></li>
-          <li class="b-d"><strong>ฟรี</strong><span>ประเมินราคา แค่ส่งรูปและขนาดหน้าต่าง</span><a class="b-link" href="#contact">ส่งรูปให้ประเมิน<svg class="i"><use href="#i-arrow-ne"/></svg></a></li>
+        <ul class="benefits reveal">
+          <li>
+            <span class="ben-icon"><svg class="i"><use href="#i-sun"/></svg></span>
+            <div class="ben-text">
+              <strong class="ben-num">60%+</strong>
+              <span class="ben-title">ลดความร้อนผ่านกระจก*</span>
+              <p>ห้องเย็นขึ้น แอร์ทำงานเบาลง</p>
+            </div>
+          </li>
+          <li>
+            <span class="ben-icon"><svg class="i"><use href="#i-shield"/></svg></span>
+            <div class="ben-text">
+              <strong class="ben-num">99%</strong>
+              <span class="ben-title">กันรังสี UV</span>
+              <p>ถนอมผิว เฟอร์นิเจอร์ไม่ซีดจาง</p>
+            </div>
+          </li>
+          <li>
+            <span class="ben-icon"><svg class="i"><use href="#i-layers"/></svg></span>
+            <div class="ben-text">
+              <strong class="ben-num">8+</strong>
+              <span class="ben-title">แบรนด์ชั้นนำ</span>
+              <p>เทียบได้ในที่เดียว เลือกให้ตรงงบ</p>
+            </div>
+          </li>
+          <li class="ben-cta">
+            <span class="ben-icon"><svg class="i"><use href="#i-check"/></svg></span>
+            <div class="ben-text">
+              <strong class="ben-num">ฟรี</strong>
+              <span class="ben-title">ประเมินราคา</span>
+              <p>แค่ส่งรูปและขนาดหน้าต่าง</p>
+            </div>
+            <a class="btn btn-gold btn-sm" href="https://line.me/R/ti/p/@filmlab" target="_blank" rel="noopener"><svg class="i i-fill"><use href="#i-line"/></svg>ส่งรูปทาง LINE</a>
+          </li>
         </ul>
         <p class="footnote">*ขึ้นอยู่กับรุ่นฟิล์มและสภาพกระจก</p>
       </div>

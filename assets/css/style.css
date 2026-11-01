@@ -261,17 +261,32 @@ section[id] { scroll-margin-top: var(--header-h); }
 .statement-sub { max-width: 40em; margin-bottom: clamp(48px, 6vw, 80px); font-size: 1.15rem; color: var(--text); }
 .statement em { font-style: normal; background: linear-gradient(transparent 72%, rgba(197, 166, 109, .55) 72%, rgba(197, 166, 109, .55) 90%, transparent 90%); }
 
-.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: "a a b c" "a a d d"; gap: 16px; margin: 0; padding: 0; list-style: none; }
-.bento li { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 210px; padding: clamp(22px, 2.6vw, 34px); border-radius: var(--r-lg); }
-.bento strong { font-family: var(--font-num); font-size: clamp(3rem, 5.6vw, 5rem); font-weight: 800; line-height: 1; letter-spacing: -.04em; color: var(--navy); }
-.bento span { max-width: 18em; font-size: .98rem; font-weight: 700; }
-.b-a { grid-area: a; color: var(--on-navy); background: var(--navy); }
-.b-a strong { font-size: clamp(5.5rem, 13vw, 11.5rem); color: #fff; }
-.b-a strong::after { content: ""; display: block; width: 64px; height: 3px; margin-top: 18px; background: var(--gold); }
-.b-b { grid-area: b; background: var(--white); border: 1px solid var(--border); }
-.b-c { grid-area: c; background: var(--tint); }
-.b-d { grid-area: d; background: var(--gold-soft); }
-.b-link { position: absolute; right: clamp(22px, 2.6vw, 34px); bottom: clamp(22px, 2.6vw, 34px); display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--navy); border-bottom: 1.5px solid var(--navy); }
+/* จุดเด่น 4 กล่อง: ขนาดเท่ากัน · กล่องสุดท้ายเป็นกล่องปิดการขาย */
+.benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.benefits li {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 26px 30px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .3s ease;
+}
+.benefits li:hover { border-color: transparent; box-shadow: 0 24px 48px -28px rgba(24, 50, 75, .45); transform: translateY(-4px); }
+.ben-icon { display: grid; place-items: center; flex: none; width: 48px; height: 48px; color: var(--navy); background: var(--gold-soft); border-radius: 50%; }
+.ben-icon .i { width: 22px; height: 22px; }
+.ben-text { display: grid; gap: 4px; }
+.ben-num { font-family: var(--font-num); font-size: clamp(2.4rem, 3.4vw, 3.1rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: var(--navy); }
+.ben-title { margin-top: 8px; font-size: 1.08rem; font-weight: 800; line-height: 1.4; color: var(--navy); }
+.ben-text p { font-size: .96rem; line-height: 1.6; color: var(--text); }
+
+.benefits .ben-cta { color: var(--on-navy); background: var(--navy); border-color: var(--navy); }
+.ben-cta .ben-icon { background: var(--gold); }
+.ben-cta .ben-num { color: var(--gold); }
+.ben-cta .ben-title { color: #fff; }
+.ben-cta .ben-text p { color: var(--on-navy); }
+.ben-cta .btn { align-self: flex-start; margin-top: auto; }
 .footnote { margin-top: 14px; font-size: .78rem; text-align: right; color: var(--glass); }
 
 /* ---------- (01) Films: แถวตัวหนังสือใหญ่ ---------- */
@@ -525,7 +540,7 @@ body:has(.lightbox[open]) { overflow: hidden; }
   .nav { display: none; }
   .header-cta { margin-left: auto; }
   .sec-head { grid-template-columns: 1fr; }
-  .bento { grid-template-areas: "a a b c" "a a d d"; }
+  .benefits { grid-template-columns: 1fr 1fr; }
   .film-body { padding-left: 0; }
   .brands-grid { grid-template-columns: 1fr; }
   .works-head { grid-template-columns: 1fr; }
@@ -552,9 +567,13 @@ body:has(.lightbox[open]) { overflow: hidden; }
   .ba-knob { top: 32%; width: 54px; height: 54px; }
   .hero-hint { top: calc(var(--header-h) + 12px); font-size: .72rem; }
 
-  .bento { grid-template-columns: 1fr 1fr; grid-template-areas: "a a" "b c" "d d"; gap: 12px; }
-  .bento li { min-height: 160px; }
-  .b-d { padding-bottom: 64px !important; }
+  .benefits { grid-template-columns: 1fr; gap: 10px; }
+  .benefits li { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px 16px; padding: 18px 20px; }
+  .ben-text { flex: 1; grid-template-columns: auto 1fr; align-items: baseline; column-gap: 12px; }
+  .ben-num { font-size: 1.9rem; }
+  .ben-title { margin-top: 0; font-size: 1rem; }
+  .ben-text p { grid-column: 1 / -1; font-size: .9rem; }
+  .ben-cta .btn { flex: 1 1 100%; margin-top: 0; }
 
   .film summary { grid-template-columns: 34px minmax(0, 1fr) 44px; gap: 4px 12px; }
   .film-name { grid-column: 2; grid-row: 2; text-align: left; font-size: .85rem; }
