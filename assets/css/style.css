@@ -128,7 +128,8 @@ section[id] { scroll-margin-top: var(--header-h); }
 
 .ba { --pos: 50%; --photo-pos: 50% 60%; --sun-x: 22%; --sun-y: 14%; position: absolute; inset: 0; user-select: none; -webkit-user-select: none; isolation: isolate; }
 .ba-layer { position: absolute; inset: 0; }
-/* เงาไล่สีกรมท่าด้านล่าง/บน ให้ตัวหนังสืออ่านชัด */
+/* เงาเข้มเฉพาะด้านล่าง (หลังตัวหนังสือ) และขอบบนบาง ๆ (หลังเมนู)
+   ใช้สีเข้มเกือบดำ ไม่ทับโทนฟ้าทั้งภาพ สีจริงของแต่ละฝั่งจึงต่างกันชัด */
 .ba-layer::after {
   content: "";
   position: absolute;
@@ -136,25 +137,28 @@ section[id] { scroll-margin-top: var(--header-h); }
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(0deg, rgba(16, 36, 58, .96) 0%, rgba(16, 36, 58, .82) 30%, rgba(16, 36, 58, .4) 54%, transparent 72%),
-    linear-gradient(90deg, rgba(16, 36, 58, .5) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(16, 36, 58, .6) 0%, transparent 24%);
+    linear-gradient(0deg, rgba(10, 18, 28, .94) 0%, rgba(10, 18, 28, .8) 30%, rgba(10, 18, 28, .45) 50%, rgba(10, 18, 28, .12) 64%, transparent 74%),
+    linear-gradient(180deg, rgba(10, 18, 28, .45) 0%, transparent 16%);
 }
 .ba-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--photo-pos); }
 .ba-after { clip-path: inset(0 0 0 var(--pos)); }
-.ba-before .ba-photo { filter: brightness(1.08) contrast(.84) saturate(.82) sepia(.2); }
+
+/* ไม่ติดฟิล์ม: แดดจ้า ฝ้าอมส้ม สีซีด ดูร้อน */
+.ba-before .ba-photo { filter: brightness(1.14) contrast(.78) saturate(.6) sepia(.42); }
 .glare {
   position: absolute;
   inset: 0;
   mix-blend-mode: screen;
   background:
-    radial-gradient(circle at var(--sun-x) var(--sun-y), #fffdf2 0, #fff6d8 4%, rgba(255, 228, 170, .85) 9%, rgba(255, 196, 120, .45) 22%, rgba(255, 160, 80, .18) 42%, transparent 66%),
-    linear-gradient(180deg, rgba(255, 170, 80, .26), rgba(255, 140, 60, .1));
+    radial-gradient(circle at var(--sun-x) var(--sun-y), #fffdf2 0, #fff4d2 5%, rgba(255, 222, 160, .9) 11%, rgba(255, 190, 110, .55) 26%, rgba(255, 160, 80, .25) 46%, transparent 70%),
+    linear-gradient(180deg, rgba(255, 168, 80, .38) 0%, rgba(255, 140, 60, .22) 100%);
   animation: glare 4s ease-in-out infinite;
 }
 @keyframes glare { 0%, 100% { opacity: .9; } 50% { opacity: 1; } }
-.ba-after .ba-photo { filter: saturate(1.1) contrast(1.06) brightness(.98); }
-.tint { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .08) 45%, transparent 58%), linear-gradient(180deg, rgba(24, 50, 75, .2), rgba(24, 50, 75, .06)); }
+
+/* ติดฟิล์มแล้ว: ใส คมชัด สีสดตามจริง (ฟ้าเป็นฟ้า ต้นไม้เป็นเขียว) */
+.ba-after .ba-photo { filter: saturate(1.3) contrast(1.14) brightness(1.02); }
+.tint { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .07) 45%, transparent 58%); }
 
 .ba-badge {
   position: absolute;
@@ -198,9 +202,9 @@ section[id] { scroll-margin-top: var(--header-h); }
 
 .hero-content { position: absolute; right: 0; bottom: 0; left: 0; z-index: 5; padding-bottom: clamp(36px, 6vh, 64px); pointer-events: none; }
 .hero-content a, .hero-content button { pointer-events: auto; }
-.hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: .92rem; font-weight: 700; color: rgba(255, 255, 255, .8); }
+.hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: .92rem; font-weight: 700; color: #fff; text-shadow: 0 1px 10px rgba(0, 0, 0, .5); }
 .hero-kicker::before { content: ""; width: 40px; height: 1.5px; background: var(--gold); }
-.hero-title { font-size: clamp(2.8rem, 7.4vw, 6.6rem); font-weight: 800; line-height: 1.14; letter-spacing: -.01em; color: #fff; text-shadow: 0 2px 24px rgba(16, 36, 58, .35); }
+.hero-title { font-size: clamp(2.8rem, 7.4vw, 6.6rem); font-weight: 800; line-height: 1.14; letter-spacing: -.01em; color: #fff; text-shadow: 0 2px 28px rgba(0, 0, 0, .45), 0 1px 3px rgba(0, 0, 0, .3); }
 .hero-title .line { display: block; }
 .hero-title .line > span { display: inline-block; }
 .hero-foot {
@@ -212,7 +216,7 @@ section[id] { scroll-margin-top: var(--header-h); }
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, .2);
 }
-.lead { max-width: 32em; font-size: 1.14rem; line-height: 1.7; color: rgba(255, 255, 255, .92); }
+.lead { max-width: 32em; font-size: 1.14rem; line-height: 1.7; color: rgba(255, 255, 255, .94); text-shadow: 0 1px 12px rgba(0, 0, 0, .45); }
 .hero-points { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 14px 0 0; padding: 0; list-style: none; font-size: .95rem; font-weight: 700; color: #fff; }
 .hero-points li { display: flex; align-items: center; gap: 7px; }
 .hero-points .i { color: var(--gold); stroke-width: 2.6; }
