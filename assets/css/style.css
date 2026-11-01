@@ -340,7 +340,7 @@ section[id] { scroll-margin-top: var(--header-h); }
 .big-num { margin-bottom: 8px; font-family: var(--font-num); font-size: clamp(7rem, 15vw, 13rem); font-weight: 800; line-height: .9; letter-spacing: -.05em; color: var(--gold); }
 .big-num sup { font-size: .42em; vertical-align: .9em; }
 .brands h2 { margin-bottom: 16px; font-size: clamp(1.7rem, 3vw, 2.5rem); color: #fff; }
-.brands-copy > p:not(.index):not(.big-num) { max-width: 26em; margin-bottom: 28px; }
+.brands-copy > p:not(.index):not(.big-num) { max-width: 26em; }
 .logo-wall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .logo-wall li { display: grid; place-items: center; height: clamp(96px, 10vw, 128px); padding: 0 18px; background: var(--white); border-radius: var(--r-lg); transition: transform .35s var(--ease); }
 .logo-wall li:hover { transform: translateY(-4px); }
