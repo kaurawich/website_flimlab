@@ -101,20 +101,16 @@
     });
   });
 
-  /* ---------- Works: สร้างการ์ดจาก works-data.js + ปุ่มกรอง + ดูทั้งหมด ---------- */
+  /* ---------- Works: แกลเลอรีจาก works-data.js + ปุ่มกรอง ---------- */
   const worksGrid = document.getElementById('works-grid');
   const works = Array.isArray(window.FILMLAB_WORKS) ? window.FILMLAB_WORKS : [];
   if (worksGrid && works.length) {
     const ALL = 'ทั้งหมด';
-    const FIRST = 6; // จำนวนงานที่แสดงก่อนกด "ดูผลงานทั้งหมด"
     const TYPE_ORDER = ['บ้าน', 'คอนโด', 'สำนักงาน', 'ร้านค้า'];
     const dir = 'assets/img/works/';
-    const cta = worksGrid.querySelector('.work-cta');
+    const cta = worksGrid.querySelector('.shot-cta');
     const filterBox = document.querySelector('.works-filter');
-    const moreWrap = document.querySelector('.works-more');
-    const moreBtn = document.getElementById('works-more');
     let filter = ALL;
-    let expanded = false;
 
     const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -122,60 +118,36 @@
       const n = Math.max(1, Number(w.photos) || 1);
       const photos = Array.from({ length: n }, (_, i) => `${dir}${w.id}-${i + 1}.jpg`);
       const a = document.createElement('a');
-      a.className = 'work';
+      a.className = 'shot work';
       a.href = photos[0];
       a.dataset.title = w.title;
       a.dataset.photos = photos.join(', ');
       a.dataset.type = w.type || '';
       a.innerHTML = `
-        <div class="work-media">
-          <img src="${dir}${esc(w.id)}-1-sm.jpg" srcset="${dir}${esc(w.id)}-1-sm.jpg 720w, ${dir}${esc(w.id)}-1.jpg 1400w" alt="${esc(w.alt || `${w.title} หลังติดฟิล์ม`)}" loading="lazy">
-          <span class="work-count"><svg class="i"><use href="#i-photo"/></svg>${n} รูป</span>
-        </div>
-        <div class="work-body">
-          <p class="work-type">${esc(w.type)}</p>
-          <h3>${esc(w.title)}</h3>
-          <p class="work-film">${esc(w.film)}</p>
-        </div>`;
-      worksGrid.insertBefore(a, cta);
+        <img src="${dir}${esc(w.id)}-1-sm.jpg" alt="${esc(w.alt || `${w.title} หลังติดฟิล์ม`)}" loading="lazy">
+        <span class="shot-arrow"><svg class="i"><use href="#i-arrow-ne"/></svg></span>
+        <span class="shot-count"><svg class="i"><use href="#i-photo"/></svg>${n}</span>
+        <span class="shot-info">
+          <span class="shot-type">${esc(w.type)}</span>
+          <strong>${esc(w.title)}</strong>
+          <em>${esc(w.film)}</em>
+        </span>`;
       return a;
     });
 
-    // จัดเลย์เอาต์: งานแรกเป็นภาพใหญ่ แล้วขยายการ์ด LINE ให้เติมแถวสุดท้ายพอดี ไม่มีช่องว่าง
-    const layout = () => {
-      const match = cards.filter((c) => filter === ALL || c.dataset.type === filter);
-      const limit = filter === ALL && !expanded ? FIRST : Infinity;
-      const shown = match.slice(0, limit);
-      cards.forEach((c) => {
-        c.hidden = !shown.includes(c);
-        c.classList.remove('work-feature');
+    // กระจายงานลงคอลัมน์แบบวนซ้ายไปขวา ลำดับในไฟล์จึงอ่านจากซ้ายไปขวาเหมือนเดิม
+    const colsMQ = window.matchMedia('(max-width: 760px)');
+    const render = () => {
+      const count = colsMQ.matches ? 2 : 3;
+      const shown = cards.filter((c) => filter === ALL || c.dataset.type === filter);
+      worksGrid.textContent = '';
+      const cols = Array.from({ length: count }, () => {
+        const col = document.createElement('div');
+        col.className = 'gallery-col';
+        worksGrid.appendChild(col);
+        return col;
       });
-
-      const cols = getComputedStyle(worksGrid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
-      const feature = cols >= 2 && shown.length >= 2;
-      if (feature) shown[0].classList.add('work-feature');
-      shown.forEach((c) => {
-        c.querySelector('img').sizes = c.classList.contains('work-feature')
-          ? '(max-width: 760px) 100vw, 800px'
-          : '(max-width: 760px) 50vw, 400px';
-      });
-
-      let span = cols;
-      let rows = 1;
-      if (feature && cols === 3) {
-        const rest = shown.length - 1;
-        if (rest === 0) { span = 1; rows = 2; } else if (rest === 1) { span = 1; } else { span = 3 - ((rest - 2) % 3); }
-      } else {
-        const rest = feature ? shown.length - 1 : shown.length;
-        span = cols - (rest % cols);
-      }
-      cta.style.gridColumn = `span ${span}`;
-      cta.style.gridRow = rows > 1 ? `span ${rows}` : '';
-      cta.classList.toggle('is-wide', span === cols && cols > 1);
-
-      const hasMore = filter === ALL && !expanded && match.length > FIRST;
-      moreWrap.hidden = !hasMore;
-      moreBtn.textContent = `ดูผลงานทั้งหมด (${match.length} งาน)`;
+      [...shown, cta].forEach((el, i) => cols[i % count].appendChild(el));
     };
 
     const present = [...new Set(works.map((w) => w.type).filter(Boolean))];
@@ -190,24 +162,30 @@
       b.addEventListener('click', () => {
         filter = t;
         filterBox.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-        layout();
+        render();
       });
       filterBox.appendChild(b);
     });
 
-    moreBtn.addEventListener('click', (e) => {
-      expanded = true;
-      moreBtn.setAttribute('aria-expanded', 'true');
-      layout();
-      const next = cards.filter((c) => !c.hidden)[FIRST];
-      if (next && e.detail === 0) next.focus(); // ย้ายโฟกัสเฉพาะตอนกดด้วยคีย์บอร์ด
-    });
+    if (colsMQ.addEventListener) colsMQ.addEventListener('change', render);
+    render();
+  }
 
-    ['(max-width: 1060px)', '(max-width: 760px)'].forEach((q) => {
-      const mq = window.matchMedia(q);
-      if (mq.addEventListener) mq.addEventListener('change', layout);
+  /* ---------- เนื้อหาค่อย ๆ ขึ้นมาตอนเลื่อนถึง ---------- */
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove('pending');
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => {
+      if (el.getBoundingClientRect().top > window.innerHeight) {
+        el.classList.add('pending');
+        io.observe(el);
+      }
     });
-    layout();
   }
 
   /* ---------- Works lightbox ---------- */
